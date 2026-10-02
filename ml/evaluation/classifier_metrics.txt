@@ -1,0 +1,36 @@
+Complaint Classification — Model Comparison
+==================================================
+Dataset: SYNTHETIC (bootstrap, see ml/data/generate_synthetic_data.py)
+Train size: 672  Test size: 168
+
+Model: tfidf_logreg
+  Accuracy: 1.0000
+  Macro F1: 1.0000
+    Drainage        precision=1.00 recall=1.00 f1=1.00
+    Electricity     precision=1.00 recall=1.00 f1=1.00
+    Other           precision=1.00 recall=1.00 f1=1.00
+    Road            precision=1.00 recall=1.00 f1=1.00
+    Sanitation      precision=1.00 recall=1.00 f1=1.00
+    Street Light    precision=1.00 recall=1.00 f1=1.00
+    Water           precision=1.00 recall=1.00 f1=1.00
+
+Model: tfidf_linear_svm
+  Accuracy: 1.0000
+  Macro F1: 1.0000
+    Drainage        precision=1.00 recall=1.00 f1=1.00
+    Electricity     precision=1.00 recall=1.00 f1=1.00
+    Other           precision=1.00 recall=1.00 f1=1.00
+    Road            precision=1.00 recall=1.00 f1=1.00
+    Sanitation      precision=1.00 recall=1.00 f1=1.00
+    Street Light    precision=1.00 recall=1.00 f1=1.00
+    Water           precision=1.00 recall=1.00 f1=1.00
+
+SELECTED MODEL: tfidf_logreg
+Confusion matrix (rows=actual, cols=predicted), labels=['Drainage', 'Electricity', 'Other', 'Road', 'Sanitation', 'Street Light', 'Water']:
+   24   0   0   0   0   0   0
+    0  24   0   0   0   0   0
+    0   0  24   0   0   0   0
+    0   0   0  24   0   0   0
+    0   0   0   0  24   0   0
+    0   0   0   0   0  24   0
+    0   0   0   0   0   0  24

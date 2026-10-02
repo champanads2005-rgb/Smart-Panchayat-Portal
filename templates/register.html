@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>Register - Smart Panchayat</title>
+
+<style>
+
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+    }
+
+    body {
+        min-height: 100vh;
+        background: linear-gradient(135deg, #eef6ff, #f8fbff);
+        color: #1f2937;
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* ================= HEADER ================= */
+
+    .header {
+        background: linear-gradient(135deg, #123b63, #2563a6);
+        color: white;
+        padding: 17px 6%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+    }
+
+    .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .brand-icon {
+        width: 43px;
+        height: 43px;
+        background: rgba(255, 255, 255, 0.15);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 23px;
+    }
+
+    .brand h1 {
+        font-size: 22px;
+        margin-bottom: 3px;
+    }
+
+    .brand p {
+        font-size: 11px;
+        opacity: 0.85;
+    }
+
+    .home-link {
+        color: white;
+        text-decoration: none;
+        background: rgba(255, 255, 255, 0.13);
+        padding: 9px 15px;
+        border-radius: 8px;
+        font-size: 13px;
+        font-weight: bold;
+    }
+
+    .home-link:hover {
+        background: rgba(255, 255, 255, 0.22);
+    }
+
+    /* ================= MAIN ================= */
+
+    .main {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 40px 20px;
+    }
+
+    .form-box {
+        width: 100%;
+        max-width: 520px;
+        background: white;
+        padding: 35px 38px;
+        border-radius: 18px;
+        box-shadow: 0 10px 35px rgba(15, 23, 42, 0.09);
+        border: 1px solid #e5edf5;
+    }
+
+    .register-icon {
+        width: 62px;
+        height: 62px;
+        margin: 0 auto 18px;
+        border-radius: 17px;
+        background: #eff6ff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 29px;
+    }
+
+    .heading {
+        text-align: center;
+        margin-bottom: 27px;
+    }
+
+    .heading h2 {
+        color: #123b63;
+        font-size: 27px;
+        margin-bottom: 8px;
+    }
+
+    .heading p {
+        color: #6b7280;
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    /* ================= FORM ================= */
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    label {
+        display: block;
+        color: #374151;
+        font-weight: bold;
+        font-size: 13px;
+        margin-bottom: 7px;
+    }
+
+    .input-wrapper {
+        position: relative;
+    }
+
+    .input-icon {
+        position: absolute;
+        left: 13px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 15px;
+        z-index: 2;
+    }
+
+    input,
+    select {
+        width: 100%;
+        padding: 12px 14px 12px 41px;
+        border: 1px solid #d7e0e9;
+        border-radius: 9px;
+        font-size: 14px;
+        outline: none;
+        background: #fbfdff;
+        transition: 0.2s;
+    }
+
+    input:focus,
+    select:focus {
+        border-color: #2563a6;
+        background: white;
+        box-shadow: 0 0 0 3px rgba(37, 99, 166, 0.10);
+    }
+
+    input::placeholder {
+        color: #9ca3af;
+    }
+
+    select {
+        cursor: pointer;
+        appearance: auto;
+    }
+
+    .panchayat-help {
+        margin-top: 6px;
+        color: #64748b;
+        font-size: 11px;
+        line-height: 1.4;
+    }
+
+    /* ================= REGISTER BUTTON ================= */
+
+    .register-btn {
+        width: 100%;
+        padding: 13px;
+        margin-top: 7px;
+        background: linear-gradient(135deg, #1d5d96, #2563a6);
+        color: white;
+        border: none;
+        border-radius: 9px;
+        font-size: 15px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.2s;
+    }
+
+    .register-btn:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 6px 16px rgba(37, 99, 166, 0.25);
+    }
+
+    /* ================= LOGIN LINK ================= */
+
+    .login-link {
+        text-align: center;
+        margin-top: 22px;
+        padding-top: 19px;
+        border-top: 1px solid #edf0f4;
+        color: #6b7280;
+        font-size: 13px;
+    }
+
+    .login-link a {
+        color: #2563a6;
+        text-decoration: none;
+        font-weight: bold;
+        margin-left: 4px;
+    }
+
+    .login-link a:hover {
+        text-decoration: underline;
+    }
+
+    /* ================= FOOTER ================= */
+
+    .footer {
+        text-align: center;
+        padding: 18px;
+        color: #94a3b8;
+        font-size: 11px;
+    }
+
+    /* ================= MOBILE ================= */
+
+    @media (max-width: 600px) {
+
+        .header {
+            padding: 14px 20px;
+        }
+
+        .brand h1 {
+            font-size: 18px;
+        }
+
+        .brand p {
+            display: none;
+        }
+
+        .home-link {
+            padding: 8px 12px;
+        }
+
+        .main {
+            padding: 25px 17px;
+        }
+
+        .form-box {
+            padding: 28px 22px;
+        }
+
+        .heading h2 {
+            font-size: 24px;
+        }
+
+    }
+
+</style>
+
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<div class="header">
+
+    <div class="brand">
+
+        <div class="brand-icon">
+            🏛️
+        </div>
+
+        <div>
+
+            <h1>
+                Smart Panchayat
+            </h1>
+
+            <p>
+                Digital Governance & Citizen Services
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <a href="/"
+       class="home-link">
+
+        ← Home
+
+    </a>
+
+</div>
+
+
+<!-- ================= REGISTRATION ================= -->
+
+<main class="main">
+
+    <div class="form-box">
+
+        <div class="register-icon">
+            👤
+        </div>
+
+
+        <div class="heading">
+
+            <h2>
+                Create Citizen Account
+            </h2>
+
+            <p>
+                Register to access Smart Panchayat
+                services and manage your complaints.
+            </p>
+
+        </div>
+
+
+        <form method="POST">
+
+            <input
+                type="hidden"
+                name="csrf_token"
+                value="{{ csrf_token }}"
+            >
+
+
+            <!-- NAME -->
+
+            <div class="form-group">
+
+                <label for="name">
+                    Full Name
+                </label>
+
+                <div class="input-wrapper">
+
+                    <span class="input-icon">
+                        👤
+                    </span>
+
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Enter your full name"
+                        autocomplete="name"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- EMAIL -->
+
+            <div class="form-group">
+
+                <label for="email">
+                    Email Address
+                </label>
+
+                <div class="input-wrapper">
+
+                    <span class="input-icon">
+                        ✉️
+                    </span>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Enter your email"
+                        autocomplete="email"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- PHONE -->
+
+            <div class="form-group">
+
+                <label for="phone">
+                    Phone Number
+                </label>
+
+                <div class="input-wrapper">
+
+                    <span class="input-icon">
+                        📱
+                    </span>
+
+                    <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        maxlength="15"
+                        placeholder="Enter your phone number"
+                        autocomplete="tel"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- VILLAGE -->
+
+            <div class="form-group">
+
+                <label for="village">
+                    Village
+                </label>
+
+                <div class="input-wrapper">
+
+                    <span class="input-icon">
+                        🏘️
+                    </span>
+
+                    <input
+                        type="text"
+                        id="village"
+                        name="village"
+                        placeholder="Enter your village"
+                        autocomplete="address-level2"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- PANCHAYAT -->
+
+            <div class="form-group">
+
+                <label for="panchayat_id">
+                    Panchayat
+                </label>
+
+                <div class="input-wrapper">
+
+                    <span class="input-icon">
+                        🏛️
+                    </span>
+
+                    <select
+                        id="panchayat_id"
+                        name="panchayat_id"
+                        required
+                    >
+
+                        <option value="">
+                            Select your Panchayat
+                        </option>
+
+                        {% for panchayat in panchayats %}
+
+                        <option value="{{ panchayat.id }}">
+
+                            {{ panchayat.name }}
+
+                        </option>
+
+                        {% endfor %}
+
+                    </select>
+
+                </div>
+
+                <div class="panchayat-help">
+                    Select the Panchayat where your village is located.
+                </div>
+
+            </div>
+
+
+            <!-- PASSWORD -->
+
+            <div class="form-group">
+
+                <label for="password">
+                    Password
+                </label>
+
+                <div class="input-wrapper">
+
+                    <span class="input-icon">
+                        🔑
+                    </span>
+
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Create a password"
+                        autocomplete="new-password"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- CONFIRM PASSWORD -->
+
+            <div class="form-group">
+
+                <label for="confirm_password">
+                    Confirm Password
+                </label>
+
+                <div class="input-wrapper">
+
+                    <span class="input-icon">
+                        🔒
+                    </span>
+
+                    <input
+                        type="password"
+                        id="confirm_password"
+                        name="confirm_password"
+                        placeholder="Re-enter your password"
+                        autocomplete="new-password"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- REGISTER BUTTON -->
+
+            <button
+                type="submit"
+                class="register-btn">
+
+                Create Account →
+
+            </button>
+
+        </form>
+
+
+        <div class="login-link">
+
+            Already have an account?
+
+            <a href="{{ url_for('login') }}">
+                Login here
+            </a>
+
+        </div>
+
+    </div>
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<div class="footer">
+
+    Smart Panchayat Portal • Secure Citizen Registration
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+```
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>Submit Complaint - Smart Panchayat</title>
+
+<style>
+
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+    }
+
+    body {
+        background: #f4f7fb;
+        color: #1f2937;
+    }
+
+    /* ================= HEADER ================= */
+
+    .header {
+        background: linear-gradient(135deg, #123b63, #2563a6);
+        color: white;
+        padding: 17px 6%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+    }
+
+    .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .brand-icon {
+        width: 43px;
+        height: 43px;
+        background: rgba(255, 255, 255, 0.15);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 23px;
+    }
+
+    .brand h1 {
+        font-size: 21px;
+        margin-bottom: 3px;
+    }
+
+    .brand p {
+        font-size: 11px;
+        opacity: 0.85;
+    }
+
+    .back-btn {
+        color: white;
+        text-decoration: none;
+        background: rgba(255, 255, 255, 0.13);
+        padding: 9px 15px;
+        border-radius: 8px;
+        font-size: 13px;
+        font-weight: bold;
+    }
+
+    .back-btn:hover {
+        background: rgba(255, 255, 255, 0.22);
+    }
+
+    /* ================= MAIN ================= */
+
+    .container {
+        width: 92%;
+        max-width: 950px;
+        margin: 35px auto 50px;
+    }
+
+    .page-heading {
+        margin-bottom: 25px;
+    }
+
+    .page-heading h2 {
+        color: #123b63;
+        font-size: 30px;
+        margin-bottom: 7px;
+    }
+
+    .page-heading p {
+        color: #6b7280;
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    /* ================= FORM ================= */
+
+    .complaint-form {
+        background: white;
+        border-radius: 18px;
+        padding: 30px;
+        box-shadow: 0 7px 25px rgba(15, 23, 42, 0.07);
+        border: 1px solid #e5edf5;
+    }
+
+    .section {
+        margin-bottom: 30px;
+        padding-bottom: 27px;
+        border-bottom: 1px solid #edf1f5;
+    }
+
+    .section:last-of-type {
+        border-bottom: none;
+        margin-bottom: 5px;
+        padding-bottom: 10px;
+    }
+
+    .section-heading {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 20px;
+    }
+
+    .section-icon {
+        width: 42px;
+        height: 42px;
+        background: #eff6ff;
+        border-radius: 11px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        flex-shrink: 0;
+    }
+
+    .section-heading h3 {
+        color: #1e3a5f;
+        font-size: 18px;
+        margin-bottom: 3px;
+    }
+
+    .section-heading p {
+        color: #7b8794;
+        font-size: 12px;
+    }
+
+    /* ================= FORM FIELDS ================= */
+
+    .form-group {
+        margin-bottom: 18px;
+    }
+
+    label {
+        display: block;
+        font-size: 13px;
+        font-weight: bold;
+        color: #374151;
+        margin-bottom: 7px;
+    }
+
+    .required {
+        color: #dc2626;
+    }
+
+    input[type="text"],
+    input[type="file"],
+    textarea,
+    select {
+        width: 100%;
+        border: 1px solid #d7e0e9;
+        border-radius: 9px;
+        padding: 12px 13px;
+        font-size: 14px;
+        background: #fbfdff;
+        outline: none;
+        transition: 0.2s;
+    }
+
+    input[type="text"]:focus,
+    textarea:focus,
+    select:focus {
+        border-color: #2563a6;
+        background: white;
+        box-shadow: 0 0 0 3px rgba(37, 99, 166, 0.09);
+    }
+
+    textarea {
+        resize: vertical;
+        min-height: 125px;
+        line-height: 1.6;
+    }
+
+    input[type="file"] {
+        background: white;
+        padding: 10px;
+        cursor: pointer;
+    }
+
+    .help-text {
+        margin-top: 7px;
+        color: #7b8794;
+        font-size: 11px;
+        line-height: 1.5;
+    }
+
+    /* ================= SELECT GRID ================= */
+
+    .select-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+    }
+
+    /* ================= AUDIO ================= */
+
+    .language-options {
+        display: flex;
+        gap: 18px;
+        flex-wrap: wrap;
+        margin: 8px 0 15px;
+    }
+
+    .language-option {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        color: #4b5563;
+        font-size: 13px;
+        font-weight: normal;
+        cursor: pointer;
+    }
+
+    .language-option input {
+        width: auto;
+    }
+
+    .record-controls {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-bottom: 13px;
+    }
+
+    .record-btn,
+    .stop-btn {
+        border: none;
+        border-radius: 8px;
+        padding: 10px 17px;
+        font-weight: bold;
+        font-size: 13px;
+        cursor: pointer;
+        transition: 0.2s;
+    }
+
+    .record-btn {
+        background: #2563a6;
+        color: white;
+    }
+
+    .stop-btn {
+        background: #fee2e2;
+        color: #b91c1c;
+    }
+
+    .record-btn:hover,
+    .stop-btn:hover {
+        transform: translateY(-1px);
+    }
+
+    .stop-btn:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+        transform: none;
+    }
+
+    .audio-preview {
+        width: 100%;
+        margin-top: 12px;
+    }
+
+    /* ================= AI RESULT BOXES ================= */
+
+    .ai-result {
+        margin-top: 10px;
+        padding: 10px 13px;
+        background: #f8fafc;
+        border-left: 3px solid #2563a6;
+        border-radius: 6px;
+        color: #4b5563;
+        font-size: 12px;
+        line-height: 1.5;
+    }
+
+    .ai-label {
+        color: #2563a6;
+        font-weight: bold;
+    }
+
+    /* ================= SUBMIT ================= */
+
+    .submit-section {
+        margin-top: 25px;
+        text-align: center;
+    }
+
+    .submit-btn {
+        width: 100%;
+        max-width: 420px;
+        padding: 14px 20px;
+        background: linear-gradient(135deg, #1d5d96, #2563a6);
+        color: white;
+        border: none;
+        border-radius: 10px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.2s;
+        box-shadow: 0 5px 15px rgba(37, 99, 166, 0.2);
+    }
+
+    .submit-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(37, 99, 166, 0.28);
+    }
+
+    .submit-note {
+        margin-top: 10px;
+        color: #8a94a3;
+        font-size: 11px;
+    }
+
+    /* ================= FOOTER ================= */
+
+    .footer {
+        text-align: center;
+        color: #9ca3af;
+        font-size: 11px;
+        margin-top: 25px;
+    }
+
+    /* ================= RESPONSIVE ================= */
+
+    @media (max-width: 700px) {
+
+        .header {
+            padding: 14px 20px;
+        }
+
+        .brand h1 {
+            font-size: 18px;
+        }
+
+        .brand p {
+            display: none;
+        }
+
+        .back-btn {
+            padding: 8px 11px;
+        }
+
+        .container {
+            width: 94%;
+            margin-top: 25px;
+        }
+
+        .complaint-form {
+            padding: 22px 18px;
+        }
+
+        .page-heading h2 {
+            font-size: 25px;
+        }
+
+        .select-grid {
+            grid-template-columns: 1fr;
+            gap: 0;
+        }
+
+    }
+
+</style>
+```
+
+</head>
+
+<body>
+
+```
+<!-- ================= HEADER ================= -->
+
+<header class="header">
+
+    <div class="brand">
+
+        <div class="brand-icon">
+            🏛️
+        </div>
+
+        <div>
+
+            <h1>
+                Smart Panchayat
+            </h1>
+
+            <p>
+                Digital Governance & Citizen Services
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <a href="{{ url_for('dashboard') }}"
+       class="back-btn">
+
+        ← Dashboard
+
+    </a>
+
+</header>
+
+
+<!-- ================= MAIN ================= -->
+
+<main class="container">
+
+
+    <div class="page-heading">
+
+        <h2>
+            Submit a Complaint
+        </h2>
+
+        <p>
+            Report a Panchayat issue and use our AI-powered
+            tools to provide additional information about your complaint.
+        </p>
+
+    </div>
+
+
+    <form
+        method="POST"
+        enctype="multipart/form-data"
+        class="complaint-form"
+    >
+
+        <input
+            type="hidden"
+            name="csrf_token"
+            value="{{ csrf_token }}"
+        >
+
+
+        <!-- ================= BASIC DETAILS ================= -->
+
+        <section class="section">
+
+            <div class="section-heading">
+
+                <div class="section-icon">
+                    📝
+                </div>
+
+                <div>
+
+                    <h3>
+                        Complaint Details
+                    </h3>
+
+                    <p>
+                        Provide the main information about your issue.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="title">
+                    Complaint Title
+                    <span class="required">*</span>
+                </label>
+
+                <input
+                    type="text"
+                    id="title"
+                    name="title"
+                    placeholder="Example: Water supply problem in our area"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="description">
+                    Description
+                    <span class="required">*</span>
+                </label>
+
+                <textarea
+                    id="description"
+                    name="description"
+                    rows="5"
+                    placeholder="Describe the issue clearly..."
+                    required
+                ></textarea>
+
+
+                <div
+                    id="ai-suggestion"
+                    class="ai-result"
+                ></div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= VOICE ================= -->
+
+        <section class="section">
+
+            <div class="section-heading">
+
+                <div class="section-icon">
+                    🎙️
+                </div>
+
+                <div>
+
+                    <h3>
+                        Voice Complaint
+                    </h3>
+
+                    <p>
+                        Optional — record or upload your complaint.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Audio Language
+                </label>
+
+                <div class="language-options">
+
+                    <label class="language-option">
+
+                        <input
+                            type="radio"
+                            name="audio_language"
+                            value="en"
+                            checked
+                        >
+
+                        English
+
+                    </label>
+
+
+                    <label class="language-option">
+
+                        <input
+                            type="radio"
+                            name="audio_language"
+                            value="kn"
+                        >
+
+                        Kannada (ಕನ್ನಡ)
+
+                    </label>
+
+                </div>
+
+
+                <div class="record-controls">
+
+                    <button
+                        type="button"
+                        id="record-btn"
+                        class="record-btn"
+                    >
+                        🎙️ Start Recording
+                    </button>
+
+
+                    <button
+                        type="button"
+                        id="stop-btn"
+                        class="stop-btn"
+                        disabled
+                    >
+                        ⏹ Stop Recording
+                    </button>
+
+                </div>
+
+
+                <div class="help-text">
+                    Or choose an audio file instead:
+                </div>
+
+
+                <input
+                    type="file"
+                    id="audio"
+                    name="audio"
+                    accept="audio/*"
+                >
+
+
+                <div class="help-text">
+                    Maximum 10 MB and up to 2 minutes.
+                    The transcript will be shown below for you
+                    to review and correct before it is used.
+                </div>
+
+
+                <audio
+                    id="audio-preview"
+                    controls
+                    class="audio-preview"
+                    style="display:none;"
+                ></audio>
+
+
+                <div
+                    id="ai-voice-result"
+                    class="ai-result"
+                ></div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= PHOTO ================= -->
+
+        <section class="section">
+
+            <div class="section-heading">
+
+                <div class="section-icon">
+                    📷
+                </div>
+
+                <div>
+
+                    <h3>
+                        Photo of the Issue
+                    </h3>
+
+                    <p>
+                        Optional — upload an image for AI analysis.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="image">
+                    Upload Photo
+                </label>
+
+                <input
+                    type="file"
+                    id="image"
+                    name="image"
+                    accept="image/jpeg,image/png"
+                >
+
+
+                <div class="help-text">
+
+                    JPEG or PNG, maximum 5 MB.
+
+                    Currently supported detection classes:
+
+                    <strong>
+                        {{ image_supported_classes|join(", ") }}
+                    </strong>
+
+                </div>
+
+
+                <div
+                    id="ai-image-result"
+                    class="ai-result"
+                ></div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= CATEGORY & PRIORITY ================= -->
+
+        <section class="section">
+
+            <div class="section-heading">
+
+                <div class="section-icon">
+                    🏷️
+                </div>
+
+                <div>
+
+                    <h3>
+                        Classification
+                    </h3>
+
+                    <p>
+                        Select the category and priority of your complaint.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="select-grid">
+
+
+                <div class="form-group">
+
+                    <label for="category">
+                        Category
+                        <span class="required">*</span>
+                    </label>
+
+                    <select
+                        id="category"
+                        name="category"
+                        required
+                    >
+
+                        <option value="">
+                            -- Select Category --
+                        </option>
+
+                        <option value="Water">
+                            Water
+                        </option>
+
+                        <option value="Electricity">
+                            Electricity
+                        </option>
+
+                        <option value="Road">
+                            Road
+                        </option>
+
+                        <option value="Sanitation">
+                            Sanitation
+                        </option>
+
+                        <option value="Street Light">
+                            Street Light
+                        </option>
+
+                        <option value="Drainage">
+                            Drainage
+                        </option>
+
+                        <option value="Other">
+                            Other
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="priority">
+                        Priority
+                        <span class="required">*</span>
+                    </label>
+
+                    <select
+                        id="priority"
+                        name="priority"
+                        required
+                    >
+
+                        <option value="">
+                            -- Select Priority --
+                        </option>
+
+                        <option value="Low">
+                            Low
+                        </option>
+
+                        <option value="Medium">
+                            Medium
+                        </option>
+
+                        <option value="High">
+                            High
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <div
+                id="ai-priority-suggestion"
+                class="ai-result"
+            ></div>
+
+
+            <div
+                id="ai-resolution-estimate"
+                class="ai-result"
+            ></div>
+
+        </section>
+
+
+        <!-- ================= SUBMIT ================= -->
+
+        <div class="submit-section">
+
+            <button
+                type="submit"
+                class="submit-btn"
+            >
+                🚀 Submit Complaint
+            </button>
+
+            <p class="submit-note">
+                Please review your complaint details before submitting.
+            </p>
+
+        </div>
+
+
+    </form>
+
+
+    <div class="footer">
+
+        Smart Panchayat Portal • AI-Powered Citizen Complaint Management
+
+    </div>
+
+
+</main>
+
+
+<!-- ================= AI SCRIPTS ================= -->
+
+<script src="{{ url_for('static', filename='js/ai_classify.js') }}"></script>
+
+<script src="{{ url_for('static', filename='js/ai_voice.js') }}"></script>
+
+<script src="{{ url_for('static', filename='js/ai_image.js') }}"></script>
+
+<script src="{{ url_for('static', filename='js/ai_priority.js') }}"></script>
+
+<script src="{{ url_for('static', filename='js/ai_resolution.js') }}"></script>
+```
+
+</body>
+
+</html>

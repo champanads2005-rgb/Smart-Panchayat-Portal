@@ -1,0 +1,23 @@
+{
+  "best_model": "linear_regression",
+  "all_results": {
+    "linear_regression": {
+      "mae": 21.128416171028807,
+      "rmse": 32.42926334504552,
+      "r2": 0.445256110700036
+    },
+    "random_forest": {
+      "mae": 22.357230860583357,
+      "rmse": 34.46734573828581,
+      "r2": 0.37333701770181693
+    },
+    "gradient_boosting": {
+      "mae": 22.070821266917665,
+      "rmse": 33.75576907772364,
+      "r2": 0.39894477817278573
+    }
+  },
+  "n_train": 800,
+  "n_test": 200,
+  "data_source": "synthetic"
+}

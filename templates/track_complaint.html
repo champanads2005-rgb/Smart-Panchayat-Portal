@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Track Complaint - Smart Panchayat</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f4f7fb;
+            color: #333;
+        }
+
+        .header {
+            background: #1f4e79;
+            color: white;
+            padding: 18px 40px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header h1 {
+            font-size: 24px;
+        }
+
+        .logout {
+            background: white;
+            color: #1f4e79;
+            text-decoration: none;
+
+            padding: 9px 18px;
+            border-radius: 6px;
+
+            font-weight: bold;
+        }
+
+        .container {
+            width: 92%;
+            max-width: 900px;
+
+            margin: 35px auto;
+        }
+
+        .back {
+            display: inline-block;
+
+            margin-bottom: 20px;
+
+            text-decoration: none;
+            color: #1f4e79;
+
+            font-weight: bold;
+        }
+
+        .card {
+            background: white;
+
+            padding: 25px;
+
+            border-radius: 10px;
+
+            box-shadow:
+                0 3px 12px
+                rgba(0,0,0,0.08);
+
+            margin-bottom: 25px;
+        }
+
+        .card h2 {
+            color: #1f4e79;
+            margin-bottom: 15px;
+        }
+
+        .details {
+            line-height: 1.8;
+        }
+
+        .details strong {
+            color: #555;
+        }
+
+        .timeline {
+            position: relative;
+
+            margin-top: 25px;
+            padding-left: 35px;
+        }
+
+        .timeline::before {
+            content: "";
+
+            position: absolute;
+
+            left: 10px;
+            top: 5px;
+            bottom: 5px;
+
+            width: 3px;
+
+            background: #1f4e79;
+        }
+
+        .timeline-item {
+            position: relative;
+
+            margin-bottom: 30px;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .dot {
+            position: absolute;
+
+            left: -31px;
+            top: 2px;
+
+            width: 16px;
+            height: 16px;
+
+            background: #1f4e79;
+
+            border-radius: 50%;
+
+            border: 3px solid white;
+
+            box-shadow:
+                0 0 0 2px #1f4e79;
+        }
+
+        .timeline-item h3 {
+            color: #1f4e79;
+
+            margin-bottom: 6px;
+        }
+
+        .timeline-item p {
+            color: #666;
+
+            margin-bottom: 5px;
+        }
+
+        .date {
+            font-size: 13px;
+            color: #999;
+        }
+
+        .current-status {
+            display: inline-block;
+
+            margin-top: 10px;
+
+            padding: 8px 15px;
+
+            border-radius: 20px;
+
+            background: #e8f1f8;
+
+            color: #1f4e79;
+
+            font-weight: bold;
+        }
+
+        @media (max-width: 600px) {
+
+            .header {
+                padding: 15px 20px;
+            }
+
+            .header h1 {
+                font-size: 20px;
+            }
+
+            .container {
+                width: 92%;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+
+    <!-- HEADER -->
+
+    <div class="header">
+
+        <h1>
+            Smart Panchayat
+        </h1>
+
+        <a href="{{ url_for('logout') }}"
+           class="logout">
+
+            Logout
+
+        </a>
+
+    </div>
+
+
+    <!-- MAIN -->
+
+    <div class="container">
+
+
+        <a href="{{ url_for('my_complaints') }}"
+           class="back">
+
+            ← Back to My Complaints
+
+        </a>
+
+
+        <!-- COMPLAINT DETAILS -->
+
+        <div class="card">
+
+            <h2>
+                Complaint #{{ complaint.id }}
+            </h2>
+
+            <div class="details">
+
+                <p>
+                    <strong>Title:</strong>
+                    {{ complaint.title }}
+                </p>
+
+                <p>
+                    <strong>Category:</strong>
+                    {{ complaint.category }}
+                </p>
+
+                <p>
+                    <strong>Priority:</strong>
+                    {{ complaint.priority }}
+                </p>
+
+                <p>
+                    <strong>Description:</strong>
+                    {{ complaint.description }}
+                </p>
+
+                <span class="current-status">
+
+                    Current Status:
+                    {{ complaint.status }}
+
+                </span>
+
+                {% if resolution_estimate and resolution_estimate.available %}
+                <p style="margin-top: 10px; font-size: 0.9em; color: #444;">
+                    <strong>Estimated resolution:</strong>
+                    ~{{ resolution_estimate.predicted_days }} days
+                    (this is an AI estimate, not a guaranteed deadline)
+                </p>
+                {% endif %}
+
+                {% if complaint_images %}
+                <div style="margin-top: 14px;">
+                    <strong>Your Attached Photo(s):</strong>
+                    {% for img in complaint_images %}
+                    <div style="margin-top: 6px;">
+                        <a href="{{ url_for('complaint_image', image_id=img.id) }}" target="_blank">
+                            <img src="{{ url_for('complaint_image', image_id=img.id) }}"
+                                 alt="Your complaint photo" style="max-width: 200px; border-radius: 6px; display: block;">
+                        </a>
+                        {% if img.detected_label %}
+                        <span style="font-size: 0.85em; color: #666;">
+                            AI detected: {{ img.detected_label }}
+                            ({{ (img.confidence * 100) | round(1) }}% confidence{% if img.is_low_confidence %}, uncertain{% endif %})
+                        </span>
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+
+                {% if complaint_audio_rows %}
+                <div style="margin-top: 14px;">
+                    <strong>Your Voice Recording(s):</strong>
+                    {% for rec in complaint_audio_rows %}
+                    <div style="margin-top: 6px;">
+                        <audio controls src="{{ url_for('complaint_audio', audio_id=rec.id) }}" style="max-width: 280px; display: block;"></audio>
+                        <span style="font-size: 0.85em; color: #666;">
+                            Language: {{ 'Kannada' if rec.language_selected == 'kn' else 'English' }}
+                            {% if rec.transcription_available %}
+                                — transcribed via {{ rec.transcription_engine }}
+                                ({{ (rec.asr_confidence * 100) | round(1) }}% confidence{% if rec.is_low_confidence %}, uncertain{% endif %})
+                            {% else %}
+                                — no automatic transcript was available for this recording
+                            {% endif %}
+                        </span>
+                        {% if rec.confirmed_transcript %}
+                        <div style="font-size: 0.85em; color: #444; font-style: italic;">"{{ rec.confirmed_transcript }}"</div>
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+
+            </div>
+
+        </div>
+
+
+        <!-- TRACKING HISTORY -->
+
+        <div class="card">
+
+            <h2>
+                Complaint Progress
+            </h2>
+
+            <div class="timeline">
+
+
+                {% for update in updates %}
+
+                <div class="timeline-item">
+
+                    <div class="dot"></div>
+
+                    <h3>
+                        {{ update.status }}
+                    </h3>
+
+                    <p>
+                        {{ update.message }}
+                    </p>
+
+                    <div class="date">
+
+                        {{ update.updated_at }}
+
+                    </div>
+
+                </div>
+
+                {% endfor %}
+
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+</body>
+
+</html>

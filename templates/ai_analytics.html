@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>AI Analytics - Smart Panchayat</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f4f7fb;
+            color: #333;
+        }
+
+        .header {
+            background: #1f4e79;
+            color: white;
+            padding: 18px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header h1 {
+            font-size: 25px;
+        }
+
+        .logout {
+            background: white;
+            color: #1f4e79;
+            text-decoration: none;
+            padding: 9px 18px;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .note {
+            background: #fff8e1;
+            border: 1px solid #f0d98c;
+            border-radius: 8px;
+            padding: 14px 18px;
+            font-size: 0.9em;
+            color: #6b5900;
+            margin-bottom: 24px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px 24px;
+            margin-bottom: 24px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+        }
+
+        .card h2 {
+            font-size: 18px;
+            margin-bottom: 6px;
+            color: #1f4e79;
+        }
+
+        .card .subtitle {
+            font-size: 0.85em;
+            color: #777;
+            margin-bottom: 14px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.92em;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 8px 10px;
+            border-bottom: 1px solid #eee;
+        }
+
+        th {
+            color: #555;
+            font-weight: 600;
+        }
+
+        .trend-increasing { color: #b23c17; font-weight: bold; }
+        .trend-decreasing { color: #1e7d32; }
+        .trend-stable { color: #777; }
+
+        .empty {
+            color: #888;
+            font-style: italic;
+            font-size: 0.9em;
+        }
+
+        .back {
+            display: inline-block;
+            margin-top: 6px;
+            color: #1f4e79;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="header">
+        <h1>Smart Panchayat</h1>
+        <a href="{{ url_for('logout') }}" class="logout">Logout</a>
+    </div>
+
+    <div class="container">
+
+        <div class="note">
+            <strong>Scope note:</strong> this schema stores each citizen's village as text,
+            not map coordinates, so there is no real ward-boundary map to draw here —
+            building one would mean either geocoding villages or inventing boundaries
+            that aren't this project's data. What's below is real, computed directly from
+            the {{ total_records }} complaint record(s) currently in the database, grouped
+            by village and category instead of on a map.
+        </div>
+
+        <div class="card">
+            <h2>Complaint Hotspots (last 30 days)</h2>
+            <p class="subtitle">Ranked by volume. Trend compares the first half of the window to the second half.</p>
+
+            {% if hotspots %}
+            <table>
+                <tr><th>Village</th><th>Category</th><th>Complaints</th><th>Trend</th></tr>
+                {% for h in hotspots %}
+                <tr>
+                    <td>{{ h.village }}</td>
+                    <td>{{ h.category }}</td>
+                    <td>{{ h.count }}</td>
+                    <td class="trend-{{ h.trend }}">{{ h.trend }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+            {% else %}
+            <p class="empty">Not enough recent complaint data to rank hotspots yet.</p>
+            {% endif %}
+        </div>
+
+        <div class="card">
+            <h2>Anomalies — Statistical (median/MAD)</h2>
+            <p class="subtitle">
+                Flags a village+category whose most recent week is a real outlier vs. its
+                own history. Requires at least 4 prior weeks of data for that group —
+                groups without enough history are skipped, not guessed at.
+            </p>
+
+            {% if statistical_anomalies %}
+            <table>
+                <tr><th>Village</th><th>Category</th><th>Week of</th><th>Count</th><th>Typical range</th><th>Score</th></tr>
+                {% for a in statistical_anomalies %}
+                <tr>
+                    <td>{{ a.village }}</td>
+                    <td>{{ a.category }}</td>
+                    <td>{{ a.week }}</td>
+                    <td>{{ a.count }}</td>
+                    <td>{{ a.typical_range }}</td>
+                    <td>{{ a.z_score if a.z_score is not none else '—' }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+            {% else %}
+            <p class="empty">No statistical anomalies detected in groups with enough history.</p>
+            {% endif %}
+        </div>
+
+        <div class="card">
+            <h2>Anomalies — Isolation Forest</h2>
+            <p class="subtitle">
+                Judges every village+category+week observation against the overall
+                distribution at once — can catch an unusual week even for a group with
+                little history of its own, unlike the statistical method above.
+            </p>
+
+            {% if isolation_anomalies %}
+            <table>
+                <tr><th>Village</th><th>Category</th><th>Week of</th><th>Count</th><th>Anomaly score</th></tr>
+                {% for a in isolation_anomalies %}
+                <tr>
+                    <td>{{ a.village }}</td>
+                    <td>{{ a.category }}</td>
+                    <td>{{ a.week }}</td>
+                    <td>{{ a.count }}</td>
+                    <td>{{ a.anomaly_score }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+            {% else %}
+            <p class="empty">No anomalies flagged (or too little data overall for this method).</p>
+            {% endif %}
+        </div>
+
+        <a href="{{ url_for('admin_dashboard') }}" class="back">&larr; Back to Admin Dashboard</a>
+
+    </div>
+
+</body>
+</html>

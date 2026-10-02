@@ -1,0 +1,21 @@
+Resolution-Time Prediction — Model Comparison
+==================================================
+Data source: SYNTHETIC (see ml/data/generate_resolution_time_data.py for documented assumptions)
+Train size: 800  Test size: 200
+
+Model: linear_regression
+  MAE:  21.13 hours
+  RMSE: 32.43 hours
+  R^2:  0.4453
+
+Model: random_forest
+  MAE:  22.36 hours
+  RMSE: 34.47 hours
+  R^2:  0.3733
+
+Model: gradient_boosting
+  MAE:  22.07 hours
+  RMSE: 33.76 hours
+  R^2:  0.3989
+
+SELECTED MODEL: linear_regression

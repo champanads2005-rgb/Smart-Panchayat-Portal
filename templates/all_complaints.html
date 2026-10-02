@@ -1,0 +1,1136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>All Complaints - Smart Panchayat</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f4f7fb;
+            color: #333;
+            min-height: 100vh;
+        }
+
+        /* =========================
+           HEADER
+        ========================== */
+
+        .header {
+            background: linear-gradient(135deg, #1e3a5f, #28527a);
+            color: white;
+
+            padding: 18px 5%;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.12);
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-icon {
+            width: 44px;
+            height: 44px;
+
+            background: rgba(255, 255, 255, 0.15);
+
+            border-radius: 12px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 23px;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .officer-badge {
+            background: rgba(255, 255, 255, 0.15);
+
+            padding: 9px 14px;
+
+            border-radius: 20px;
+
+            font-size: 13px;
+        }
+
+        .logout {
+            background: #e74c3c;
+            color: white;
+
+            text-decoration: none;
+
+            padding: 10px 17px;
+
+            border-radius: 8px;
+
+            font-size: 14px;
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .logout:hover {
+            background: #c0392b;
+            transform: translateY(-2px);
+        }
+
+        /* =========================
+           MAIN
+        ========================== */
+
+        .container {
+            width: 92%;
+            max-width: 1400px;
+
+            margin: 35px auto 60px;
+        }
+
+        /* =========================
+           PAGE TITLE
+        ========================== */
+
+        .page-title {
+            margin-bottom: 25px;
+        }
+
+        .page-title h2 {
+            color: #1e3a5f;
+
+            font-size: 30px;
+
+            margin-bottom: 8px;
+        }
+
+        .page-title p {
+            color: #666;
+            font-size: 15px;
+        }
+
+        /* =========================
+           FILTER BOX
+        ========================== */
+
+        .filter-box {
+            background: white;
+
+            padding: 25px;
+
+            border-radius: 15px;
+
+            box-shadow:
+                0 5px 18px rgba(0, 0, 0, 0.07);
+
+            margin-bottom: 25px;
+        }
+
+        .filter-heading {
+            display: flex;
+            align-items: center;
+
+            gap: 10px;
+
+            color: #1e3a5f;
+
+            font-size: 19px;
+
+            margin-bottom: 20px;
+        }
+
+        .filter-form {
+            display: grid;
+
+            grid-template-columns:
+                2fr 1fr 1fr 1fr auto auto;
+
+            gap: 13px;
+
+            align-items: end;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .input-group label {
+            margin-bottom: 7px;
+
+            font-size: 13px;
+
+            font-weight: bold;
+
+            color: #555;
+        }
+
+        input,
+        select {
+            width: 100%;
+
+            padding: 11px 12px;
+
+            border: 1px solid #d5dbe3;
+
+            border-radius: 8px;
+
+            font-size: 14px;
+
+            background: white;
+
+            color: #333;
+        }
+
+        input:focus,
+        select:focus {
+            outline: none;
+
+            border-color: #28527a;
+
+            box-shadow:
+                0 0 0 3px rgba(40, 82, 122, 0.10);
+        }
+
+        .btn {
+            padding: 11px 18px;
+
+            border: none;
+
+            border-radius: 8px;
+
+            cursor: pointer;
+
+            font-weight: bold;
+
+            text-decoration: none;
+
+            text-align: center;
+
+            font-size: 14px;
+
+            transition: 0.3s;
+        }
+
+        .search-btn {
+            background: #1e3a5f;
+            color: white;
+        }
+
+        .search-btn:hover {
+            background: #16304f;
+            transform: translateY(-1px);
+        }
+
+        .clear-btn {
+            background: #eef0f3;
+            color: #444;
+        }
+
+        .clear-btn:hover {
+            background: #dfe3e8;
+        }
+
+        /* =========================
+           RESULT HEADER
+        ========================== */
+
+        .result-header {
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            margin-bottom: 15px;
+        }
+
+        .result-info {
+            color: #555;
+
+            font-size: 14px;
+
+            font-weight: bold;
+        }
+
+        .result-icon {
+            font-size: 13px;
+
+            color: #777;
+        }
+
+        /* =========================
+           TABLE
+        ========================== */
+
+        .table-container {
+            background: white;
+
+            border-radius: 15px;
+
+            box-shadow:
+                0 5px 18px rgba(0, 0, 0, 0.07);
+
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+
+            border-collapse: collapse;
+
+            min-width: 1150px;
+        }
+
+        th {
+            background: #1e3a5f;
+
+            color: white;
+
+            padding: 15px 12px;
+
+            text-align: left;
+
+            font-size: 13px;
+
+            white-space: nowrap;
+        }
+
+        td {
+            padding: 14px 12px;
+
+            border-bottom: 1px solid #edf0f3;
+
+            font-size: 13px;
+
+            vertical-align: top;
+        }
+
+        tbody tr {
+            transition: 0.2s;
+        }
+
+        tbody tr:hover {
+            background: #f8fafc;
+        }
+
+        tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .complaint-id {
+            color: #1e3a5f;
+
+            font-weight: bold;
+        }
+
+        .citizen-name {
+            font-weight: bold;
+
+            color: #333;
+        }
+
+        .citizen-email {
+            color: #888;
+
+            font-size: 11px;
+
+            margin-top: 4px;
+        }
+
+        .title-text {
+            font-weight: bold;
+
+            color: #333;
+
+            max-width: 190px;
+        }
+
+        .description {
+            max-width: 250px;
+
+            color: #666;
+
+            line-height: 1.5;
+        }
+
+        .date {
+            color: #666;
+
+            white-space: nowrap;
+        }
+
+        /* =========================
+           BADGES
+        ========================== */
+
+        .badge {
+            display: inline-block;
+
+            padding: 6px 11px;
+
+            border-radius: 20px;
+
+            font-size: 11px;
+
+            font-weight: bold;
+
+            white-space: nowrap;
+        }
+
+        /* STATUS */
+
+        .submitted {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        .progress {
+            background: #cfe2ff;
+            color: #084298;
+        }
+
+        .resolved {
+            background: #d1e7dd;
+            color: #0f5132;
+        }
+
+        /* PRIORITY */
+
+        .high {
+            background: #f8d7da;
+            color: #842029;
+        }
+
+        .medium {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        .low {
+            background: #d1e7dd;
+            color: #0f5132;
+        }
+
+        /* =========================
+           UPDATE BUTTON
+        ========================== */
+
+        .update-btn {
+            display: inline-block;
+
+            background: #1e3a5f;
+
+            color: white;
+
+            padding: 8px 14px;
+
+            border-radius: 7px;
+
+            text-decoration: none;
+
+            font-size: 12px;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+
+            white-space: nowrap;
+        }
+
+        .update-btn:hover {
+            background: #16304f;
+
+            transform: translateY(-1px);
+        }
+
+        /* =========================
+           NO RESULTS
+        ========================== */
+
+        .no-results {
+            text-align: center;
+
+            padding: 65px 20px;
+
+            color: #777;
+        }
+
+        .no-results-icon {
+            font-size: 45px;
+
+            margin-bottom: 15px;
+        }
+
+        .no-results h3 {
+            color: #555;
+
+            margin-bottom: 8px;
+
+            font-size: 20px;
+        }
+
+        .no-results p {
+            font-size: 14px;
+        }
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        .footer {
+            text-align: center;
+
+            color: #888;
+
+            font-size: 13px;
+
+            padding: 20px;
+        }
+
+        /* =========================
+           TABLET
+        ========================== */
+
+        @media (max-width: 1050px) {
+
+            .filter-form {
+                grid-template-columns:
+                    1fr 1fr;
+            }
+
+            .search-btn,
+            .clear-btn {
+                width: 100%;
+            }
+
+        }
+
+        /* =========================
+           MOBILE
+        ========================== */
+
+        @media (max-width: 600px) {
+
+            .header {
+                padding: 15px 20px;
+            }
+
+            .logo {
+                font-size: 18px;
+            }
+
+            .logo-icon {
+                width: 38px;
+                height: 38px;
+                font-size: 20px;
+            }
+
+            .officer-badge {
+                display: none;
+            }
+
+            .logout {
+                padding: 9px 12px;
+                font-size: 13px;
+            }
+
+            .container {
+                width: 92%;
+                margin-top: 25px;
+            }
+
+            .page-title h2 {
+                font-size: 25px;
+            }
+
+            .filter-form {
+                grid-template-columns: 1fr;
+            }
+
+            .filter-box {
+                padding: 20px;
+            }
+
+            .result-header {
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 5px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header class="header">
+
+
+        <div class="logo-area">
+
+            <div class="logo-icon">
+                🏛️
+            </div>
+
+            <div class="logo">
+                Smart Panchayat
+            </div>
+
+        </div>
+
+
+        <div class="header-right">
+
+            <div class="officer-badge">
+                👨‍💼 Officer
+            </div>
+
+            <a href="{{ url_for('logout') }}"
+               class="logout">
+
+                Logout
+
+            </a>
+
+        </div>
+
+
+    </header>
+
+
+    <!-- =========================
+         MAIN
+    ========================== -->
+
+    <main class="container">
+
+
+        <!-- PAGE TITLE -->
+
+        <div class="page-title">
+
+            <h2>
+                📋 All Complaints
+            </h2>
+
+            <p>
+                Search, filter and manage citizen complaints.
+            </p>
+
+        </div>
+
+
+        <!-- =========================
+             SEARCH & FILTER
+        ========================== -->
+
+        <div class="filter-box">
+
+            <div class="filter-heading">
+                🔍 Search & Filter
+            </div>
+
+
+            <form method="GET"
+                  action="{{ url_for('all_complaints') }}"
+                  class="filter-form">
+
+
+                <!-- SEARCH -->
+
+                <div class="input-group">
+
+                    <label for="search">
+                        Search
+                    </label>
+
+                    <input
+                        type="text"
+                        id="search"
+                        name="search"
+                        placeholder="Search title or citizen name..."
+                        value="{{ search }}"
+                    >
+
+                </div>
+
+
+                <!-- CATEGORY -->
+
+                <div class="input-group">
+
+                    <label for="category">
+                        Category
+                    </label>
+
+                    <select id="category"
+                            name="category">
+
+                        <option value="">
+                            All Categories
+                        </option>
+
+                        <option value="Water"
+                            {% if category == "Water" %}selected{% endif %}>
+                            Water
+                        </option>
+
+                        <option value="Road"
+                            {% if category == "Road" %}selected{% endif %}>
+                            Road
+                        </option>
+
+                        <option value="Electricity"
+                            {% if category == "Electricity" %}selected{% endif %}>
+                            Electricity
+                        </option>
+
+                        <option value="Sanitation"
+                            {% if category == "Sanitation" %}selected{% endif %}>
+                            Sanitation
+                        </option>
+
+                        <option value="Other"
+                            {% if category == "Other" %}selected{% endif %}>
+                            Other
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- STATUS -->
+
+                <div class="input-group">
+
+                    <label for="status">
+                        Status
+                    </label>
+
+                    <select id="status"
+                            name="status">
+
+                        <option value="">
+                            All Status
+                        </option>
+
+                        <option value="Submitted"
+                            {% if status == "Submitted" %}selected{% endif %}>
+                            Submitted
+                        </option>
+
+                        <option value="In Progress"
+                            {% if status == "In Progress" %}selected{% endif %}>
+                            In Progress
+                        </option>
+
+                        <option value="Resolved"
+                            {% if status == "Resolved" %}selected{% endif %}>
+                            Resolved
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- PRIORITY -->
+
+                <div class="input-group">
+
+                    <label for="priority">
+                        Priority
+                    </label>
+
+                    <select id="priority"
+                            name="priority">
+
+                        <option value="">
+                            All Priority
+                        </option>
+
+                        <option value="High"
+                            {% if priority == "High" %}selected{% endif %}>
+                            High
+                        </option>
+
+                        <option value="Medium"
+                            {% if priority == "Medium" %}selected{% endif %}>
+                            Medium
+                        </option>
+
+                        <option value="Low"
+                            {% if priority == "Low" %}selected{% endif %}>
+                            Low
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- SEARCH -->
+
+                <button type="submit"
+                        class="btn search-btn">
+
+                    🔎 Search
+
+                </button>
+
+
+                <!-- CLEAR -->
+
+                <a href="{{ url_for('all_complaints') }}"
+                   class="btn clear-btn">
+
+                    Clear
+
+                </a>
+
+
+            </form>
+
+        </div>
+
+
+        <!-- =========================
+             RESULT COUNT
+        ========================== -->
+
+        <div class="result-header">
+
+            <div class="result-info">
+
+                📊 Showing
+                {{ complaints|length }}
+                complaint(s)
+
+            </div>
+
+            <div class="result-icon">
+
+                Scroll horizontally to view all details →
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             COMPLAINT TABLE
+        ========================== -->
+
+        <div class="table-container">
+
+
+            {% if complaints %}
+
+
+            <table>
+
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            ID
+                        </th>
+
+                        <th>
+                            Citizen
+                        </th>
+
+                        <th>
+                            Village
+                        </th>
+
+                        <th>
+                            Category
+                        </th>
+
+                        <th>
+                            Title
+                        </th>
+
+                        <th>
+                            Description
+                        </th>
+
+                        <th>
+                            Priority
+                        </th>
+
+                        <th>
+                            Status
+                        </th>
+
+                        <th>
+                            Date
+                        </th>
+
+                        <th>
+                            Action
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody>
+
+
+                    {% for complaint in complaints %}
+
+
+                    <tr>
+
+
+                        <!-- ID -->
+
+                        <td>
+
+                            <span class="complaint-id">
+                                #{{ complaint.id }}
+                            </span>
+
+                        </td>
+
+
+                        <!-- CITIZEN -->
+
+                        <td>
+
+                            <div class="citizen-name">
+                                {{ complaint.name }}
+                            </div>
+
+                            <div class="citizen-email">
+                                {{ complaint.email }}
+                            </div>
+
+                        </td>
+
+
+                        <!-- VILLAGE -->
+
+                        <td>
+                            {{ complaint.village }}
+                        </td>
+
+
+                        <!-- CATEGORY -->
+
+                        <td>
+                            {{ complaint.category }}
+                        </td>
+
+
+                        <!-- TITLE -->
+
+                        <td>
+
+                            <div class="title-text">
+                                {{ complaint.title }}
+                            </div>
+
+                        </td>
+
+
+                        <!-- DESCRIPTION -->
+
+                        <td class="description">
+
+                            {{ complaint.description }}
+
+                        </td>
+
+
+                        <!-- PRIORITY -->
+
+                        <td>
+
+
+                            {% if complaint.priority == "High" %}
+
+                                <span class="badge high">
+                                    🔴 High
+                                </span>
+
+
+                            {% elif complaint.priority == "Medium" %}
+
+                                <span class="badge medium">
+                                    🟡 Medium
+                                </span>
+
+
+                            {% else %}
+
+                                <span class="badge low">
+                                    🟢 Low
+                                </span>
+
+                            {% endif %}
+
+
+                        </td>
+
+
+                        <!-- STATUS -->
+
+                        <td>
+
+
+                            {% if complaint.status == "Submitted" %}
+
+                                <span class="badge submitted">
+                                    📥 Submitted
+                                </span>
+
+
+                            {% elif complaint.status == "In Progress" %}
+
+                                <span class="badge progress">
+                                    🔄 In Progress
+                                </span>
+
+
+                            {% elif complaint.status == "Resolved" %}
+
+                                <span class="badge resolved">
+                                    ✅ Resolved
+                                </span>
+
+
+                            {% else %}
+
+                                <span class="badge">
+                                    {{ complaint.status }}
+                                </span>
+
+                            {% endif %}
+
+
+                        </td>
+
+
+                        <!-- DATE -->
+
+                        <td>
+
+                            <span class="date">
+                                {{ complaint.created_at }}
+                            </span>
+
+                        </td>
+
+
+                        <!-- ACTION -->
+
+                        <td>
+
+                            <a
+                                href="{{ url_for('update_complaint', complaint_id=complaint.id) }}"
+                                class="update-btn">
+
+                                ✏️ Update
+
+                            </a>
+
+                        </td>
+
+
+                    </tr>
+
+
+                    {% endfor %}
+
+
+                </tbody>
+
+
+            </table>
+
+
+            {% else %}
+
+
+                <div class="no-results">
+
+                    <div class="no-results-icon">
+                        🔎
+                    </div>
+
+                    <h3>
+                        No complaints found
+                    </h3>
+
+                    <p>
+                        Try changing your search or filter options.
+                    </p>
+
+                </div>
+
+
+            {% endif %}
+
+
+        </div>
+
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer class="footer">
+
+        Smart Panchayat Portal © 2026
+
+    </footer>
+
+
+</body>
+
+</html>

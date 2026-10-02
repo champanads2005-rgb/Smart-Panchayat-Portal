@@ -1,0 +1,20 @@
+Flask>=3.1
+mysql-connector-python>=9.0
+python-dotenv>=1.0
+scikit-learn==1.8.0
+joblib>=1.4
+pandas>=2.2
+pytest>=8.0
+faiss-cpu>=1.8
+requests>=2.31
+
+# Phase 7: image-based complaint detection
+Pillow>=10.0
+scikit-image>=0.22
+
+# Phase 8: voice complaint system
+pocketsphinx>=5.0
+faster-whisper>=1.0
+numpy>=1.26
+# Requires the ffmpeg/ffprobe binaries to be installed on the system
+# (not a pip package) - see ml/asr/data/README.md for install commands.

@@ -1,0 +1,110 @@
+{
+  "retrieval": {
+    "in_scope": [
+      {
+        "question": "What complaint categories are available?",
+        "expected_source": "complaint_categories.md",
+        "retrieved_sources": [
+          "complaint_categories.md"
+        ],
+        "hit": true
+      },
+      {
+        "question": "How do I submit a complaint?",
+        "expected_source": "how_to_submit_complaint.md",
+        "retrieved_sources": [
+          "how_to_submit_complaint.md",
+          "complaint_status_workflow.md",
+          "how_to_submit_complaint.md"
+        ],
+        "hit": true
+      },
+      {
+        "question": "What does Under Review mean?",
+        "expected_source": "complaint_status_workflow.md",
+        "retrieved_sources": [
+          "duplicate_complaints_policy.md",
+          "complaint_status_workflow.md"
+        ],
+        "hit": true
+      },
+      {
+        "question": "Is the AI resolution time estimate a guaranteed deadline?",
+        "expected_source": "tracking_and_resolution_estimates.md",
+        "retrieved_sources": [
+          "how_to_submit_complaint.md",
+          "tracking_and_resolution_estimates.md",
+          "tracking_and_resolution_estimates.md"
+        ],
+        "hit": true
+      },
+      {
+        "question": "What happens if my complaint is flagged as a duplicate?",
+        "expected_source": "duplicate_complaints_policy.md",
+        "retrieved_sources": [
+          "duplicate_complaints_policy.md"
+        ],
+        "hit": true
+      },
+      {
+        "question": "Can I choose my own priority level instead of the AI suggestion?",
+        "expected_source": "priority_levels.md",
+        "retrieved_sources": [
+          "how_to_submit_complaint.md",
+          "priority_levels.md",
+          "priority_levels.md"
+        ],
+        "hit": true
+      },
+      {
+        "question": "What should I do if I'm not satisfied with how my complaint was handled?",
+        "expected_source": "escalation_and_contact.md",
+        "retrieved_sources": [
+          "escalation_and_contact.md"
+        ],
+        "hit": true
+      },
+      {
+        "question": "Does the portal have a Rejected status?",
+        "expected_source": "complaint_status_workflow.md",
+        "retrieved_sources": [
+          "complaint_status_workflow.md",
+          "escalation_and_contact.md",
+          "escalation_and_contact.md"
+        ],
+        "hit": true
+      }
+    ],
+    "out_of_scope": [
+      {
+        "question": "What is the capital of France?",
+        "retrieved_sources": [],
+        "correctly_declined": true
+      },
+      {
+        "question": "Tell me a joke about cats.",
+        "retrieved_sources": [],
+        "correctly_declined": true
+      },
+      {
+        "question": "What is the current GST rate in India?",
+        "retrieved_sources": [
+          "tracking_and_resolution_estimates.md",
+          "escalation_and_contact.md"
+        ],
+        "correctly_declined": false
+      },
+      {
+        "question": "Who won the last cricket world cup?",
+        "retrieved_sources": [
+          "tracking_and_resolution_estimates.md"
+        ],
+        "correctly_declined": false
+      }
+    ],
+    "retrieval_hit_rate_at_k": 1.0,
+    "correct_decline_rate": 0.5,
+    "top_k": 3
+  },
+  "generation": null
+}

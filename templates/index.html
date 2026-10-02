@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+```
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>Smart Panchayat Portal</title>
+
+<style>
+
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+    }
+
+    body {
+        background: #f5f8fc;
+        color: #1f2937;
+    }
+
+    /* ================= NAVBAR ================= */
+
+    .navbar {
+        background: linear-gradient(135deg, #123b63, #2563a6);
+        padding: 16px 6%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+    }
+
+    .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        text-decoration: none;
+        color: white;
+    }
+
+    .brand-icon {
+        width: 44px;
+        height: 44px;
+        background: rgba(255, 255, 255, 0.15);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 23px;
+    }
+
+    .brand-text h1 {
+        font-size: 22px;
+        margin-bottom: 2px;
+    }
+
+    .brand-text span {
+        font-size: 11px;
+        opacity: 0.85;
+    }
+
+    .nav-buttons {
+        display: flex;
+        gap: 10px;
+    }
+
+    .nav-btn {
+        text-decoration: none;
+        padding: 9px 17px;
+        border-radius: 8px;
+        font-size: 13px;
+        font-weight: bold;
+        transition: 0.2s;
+    }
+
+    .login-btn {
+        background: white;
+        color: #174a78;
+    }
+
+    .register-btn {
+        background: #fbbf24;
+        color: #172554;
+    }
+
+    .nav-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
+    }
+
+
+    /* ================= HERO ================= */
+
+    .hero {
+        background: linear-gradient(135deg, #eaf4ff, #f8fbff);
+        padding: 75px 20px 70px;
+        text-align: center;
+        border-bottom: 1px solid #e5edf5;
+    }
+
+    .hero-icon {
+        width: 78px;
+        height: 78px;
+        margin: 0 auto 22px;
+        border-radius: 22px;
+        background: linear-gradient(135deg, #1d5d96, #3284c4);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 40px;
+        box-shadow: 0 10px 25px rgba(37, 99, 166, 0.25);
+    }
+
+    .hero h2 {
+        font-size: 46px;
+        color: #123b63;
+        margin-bottom: 15px;
+        line-height: 1.15;
+    }
+
+    .hero .tagline {
+        font-size: 21px;
+        color: #2563a6;
+        font-weight: bold;
+        margin-bottom: 18px;
+    }
+
+    .hero-description {
+        max-width: 720px;
+        margin: 0 auto;
+        color: #64748b;
+        font-size: 16px;
+        line-height: 1.7;
+    }
+
+    .hero-buttons {
+        margin-top: 30px;
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+
+    .primary-btn {
+        background: #2563a6;
+        color: white;
+        text-decoration: none;
+        padding: 13px 25px;
+        border-radius: 9px;
+        font-weight: bold;
+        font-size: 15px;
+        transition: 0.2s;
+        box-shadow: 0 5px 15px rgba(37, 99, 166, 0.22);
+    }
+
+    .secondary-btn {
+        background: white;
+        color: #2563a6;
+        text-decoration: none;
+        padding: 13px 25px;
+        border-radius: 9px;
+        font-weight: bold;
+        font-size: 15px;
+        border: 1px solid #d6e3ef;
+        transition: 0.2s;
+    }
+
+    .primary-btn:hover,
+    .secondary-btn:hover {
+        transform: translateY(-2px);
+    }
+
+
+    /* ================= FEATURES ================= */
+
+    .features-section {
+        max-width: 1150px;
+        width: 92%;
+        margin: 55px auto;
+    }
+
+    .section-heading {
+        text-align: center;
+        margin-bottom: 32px;
+    }
+
+    .section-heading h3 {
+        color: #123b63;
+        font-size: 30px;
+        margin-bottom: 8px;
+    }
+
+    .section-heading p {
+        color: #6b7280;
+        font-size: 14px;
+    }
+
+    .features {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 22px;
+    }
+
+    .feature-card {
+        background: white;
+        padding: 30px 25px;
+        border-radius: 16px;
+        border: 1px solid #e6edf4;
+        box-shadow: 0 5px 20px rgba(15, 23, 42, 0.06);
+        text-align: center;
+        transition: 0.25s;
+    }
+
+    .feature-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 28px rgba(15, 23, 42, 0.1);
+    }
+
+    .feature-icon {
+        width: 62px;
+        height: 62px;
+        margin: 0 auto 18px;
+        background: #eff6ff;
+        border-radius: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 29px;
+    }
+
+    .feature-card h4 {
+        color: #1e3a5f;
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .feature-card p {
+        color: #6b7280;
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+
+    /* ================= HIGHLIGHT ================= */
+
+    .highlight {
+        max-width: 1150px;
+        width: 92%;
+        margin: 0 auto 55px;
+        background: linear-gradient(135deg, #123b63, #2563a6);
+        border-radius: 18px;
+        padding: 35px;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 25px;
+    }
+
+    .highlight h3 {
+        font-size: 23px;
+        margin-bottom: 8px;
+    }
+
+    .highlight p {
+        font-size: 14px;
+        line-height: 1.6;
+        opacity: 0.9;
+    }
+
+    .highlight-btn {
+        background: white;
+        color: #174a78;
+        padding: 12px 20px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: bold;
+        white-space: nowrap;
+    }
+
+
+    /* ================= FOOTER ================= */
+
+    footer {
+        background: #102f4e;
+        color: white;
+        text-align: center;
+        padding: 24px 15px;
+    }
+
+    footer h4 {
+        font-size: 16px;
+        margin-bottom: 6px;
+    }
+
+    footer p {
+        color: #b9c8d8;
+        font-size: 12px;
+    }
+
+
+    /* ================= RESPONSIVE ================= */
+
+    @media (max-width: 800px) {
+
+        .hero h2 {
+            font-size: 36px;
+        }
+
+        .features {
+            grid-template-columns: 1fr;
+        }
+
+        .highlight {
+            flex-direction: column;
+            text-align: center;
+        }
+
+    }
+
+    @media (max-width: 600px) {
+
+        .navbar {
+            padding: 14px 20px;
+        }
+
+        .brand-text span {
+            display: none;
+        }
+
+        .brand-text h1 {
+            font-size: 18px;
+        }
+
+        .nav-btn {
+            padding: 8px 12px;
+            font-size: 12px;
+        }
+
+        .hero {
+            padding: 55px 18px;
+        }
+
+        .hero h2 {
+            font-size: 30px;
+        }
+
+        .hero .tagline {
+            font-size: 17px;
+        }
+
+        .hero-description {
+            font-size: 14px;
+        }
+
+        .hero-buttons {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .primary-btn,
+        .secondary-btn {
+            width: 220px;
+        }
+
+        .highlight {
+            padding: 28px 20px;
+        }
+
+    }
+
+</style>
+```
+
+</head>
+
+<body>
+
+```
+<!-- ================= NAVBAR ================= -->
+
+<nav class="navbar">
+
+    <a href="/" class="brand">
+
+        <div class="brand-icon">
+            🏛️
+        </div>
+
+        <div class="brand-text">
+
+            <h1>Smart Panchayat</h1>
+
+            <span>
+                Digital Governance & Citizen Services
+            </span>
+
+        </div>
+
+    </a>
+
+
+    <div class="nav-buttons">
+
+        <a href="/login"
+           class="nav-btn login-btn">
+            Login
+        </a>
+
+        <a href="/register"
+           class="nav-btn register-btn">
+            Register
+        </a>
+
+    </div>
+
+</nav>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+    <div class="hero-icon">
+        🏛️
+    </div>
+
+    <h2>
+        Smart Panchayat Portal
+    </h2>
+
+    <p class="tagline">
+        Digital Governance for Rural Communities
+    </p>
+
+    <p class="hero-description">
+
+        A smart digital platform that connects citizens
+        and Panchayat officers, making complaint registration,
+        tracking, status updates and citizen services
+        easier and more transparent.
+
+    </p>
+
+
+    <div class="hero-buttons">
+
+        <a href="/login"
+           class="primary-btn">
+            🚀 Get Started
+        </a>
+
+        <a href="/register"
+           class="secondary-btn">
+            Create Account
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FEATURES ================= -->
+
+<section class="features-section">
+
+    <div class="section-heading">
+
+        <h3>
+            Smart & Simple Services
+        </h3>
+
+        <p>
+            Access important Panchayat services through one platform.
+        </p>
+
+    </div>
+
+
+    <div class="features">
+
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                📝
+            </div>
+
+            <h4>
+                Online Complaints
+            </h4>
+
+            <p>
+                Citizens can submit village complaints
+                digitally with relevant details and
+                supporting information.
+            </p>
+
+        </div>
+
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                🔎
+            </div>
+
+            <h4>
+                Complaint Tracking
+            </h4>
+
+            <p>
+                Track complaint status and monitor
+                progress from submission to resolution.
+            </p>
+
+        </div>
+
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                🤖
+            </div>
+
+            <h4>
+                AI-Powered Assistance
+            </h4>
+
+            <p>
+                AI features help classify complaints,
+                estimate priority and support smarter
+                complaint management.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= HIGHLIGHT ================= -->
+
+<section class="highlight">
+
+    <div>
+
+        <h3>
+            Have a Panchayat complaint?
+        </h3>
+
+        <p>
+            Register your complaint online and
+            track its progress through the portal.
+        </p>
+
+    </div>
+
+    <a href="/login"
+       class="highlight-btn">
+        Submit Complaint →
+    </a>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <h4>
+        🏛️ Smart Panchayat Portal
+    </h4>
+
+    <p>
+        Digital Governance & Citizen Services
+    </p>
+
+</footer>
+```
+
+</body>
+
+</html>

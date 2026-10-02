@@ -1,0 +1,24 @@
+Priority Prediction — Model Comparison
+==================================================
+Dataset: SYNTHETIC (see ml/data/generate_priority_data.py)
+Train size: 720  Test size: 180
+
+Model: logreg
+  Accuracy: 0.5722
+  Macro F1: 0.4880
+    High       precision=0.39 recall=0.19 f1=0.26
+    Low        precision=0.68 recall=0.83 f1=0.74
+    Medium     precision=0.46 recall=0.46 f1=0.46
+
+Model: random_forest
+  Accuracy: 0.5833
+  Macro F1: 0.5321
+    High       precision=0.56 recall=0.28 f1=0.37
+    Low        precision=0.70 recall=0.73 f1=0.72
+    Medium     precision=0.46 recall=0.57 f1=0.51
+
+SELECTED MODEL: random_forest
+Confusion matrix (rows=actual, cols=predicted), labels=['High', 'Low', 'Medium']:
+   10   4  22
+    2  59  20
+    6  21  36

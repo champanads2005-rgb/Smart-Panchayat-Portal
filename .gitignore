@@ -1,0 +1,32 @@
+# Secrets
+.env
+
+# Python
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+*.egg-info/
+
+# Phase 7: uploaded complaint photos - real citizen data, never committed
+uploads/complaint_images/*
+!uploads/complaint_images/.gitkeep
+
+# Phase 8: uploaded voice recordings - real citizen data, never committed
+uploads/complaint_audio/*
+!uploads/complaint_audio/.gitkeep
+
+# OS
+.DS_Store
+
+# Local backups / old project copies
+Smart-Panchayat-Portal-phase7/
+Smart-Panchayat-Portal-phase7.zip
+
+# Project documents / presentation files
+*.pptx
+*.docx
+*.pdf
+
+# Project flyers
+Project_Demo_Flyer*.png

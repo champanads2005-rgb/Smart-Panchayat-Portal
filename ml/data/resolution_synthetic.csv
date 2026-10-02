@@ -1,0 +1,1001 @@
+category,priority,recurrence_count,resolution_hours
+Electricity,Medium,1,28.9
+Other,Medium,8,93.8
+Electricity,Medium,0,58.3
+Street Light,Medium,0,24.2
+Other,Medium,0,255.9
+Drainage,High,1,60.6
+Sanitation,Low,1,30.7
+Road,Low,2,152.9
+Water,Low,5,37.5
+Road,Medium,0,144.2
+Drainage,Low,5,89.7
+Electricity,Medium,3,77.9
+Drainage,High,3,17.8
+Water,Medium,2,38.1
+Sanitation,Medium,5,37.7
+Road,High,1,45.9
+Road,High,1,79.6
+Drainage,High,12,26.3
+Water,Medium,2,56.2
+Street Light,Medium,12,10.8
+Water,Low,0,41.8
+Road,High,5,142.6
+Electricity,Low,0,68.1
+Road,Low,0,73.0
+Street Light,High,8,2.9
+Drainage,Medium,5,140.2
+Sanitation,Medium,2,39.9
+Street Light,Low,3,25.5
+Other,High,0,20.9
+Drainage,Medium,1,180.9
+Electricity,Medium,5,25.8
+Electricity,High,1,15.4
+Road,Low,2,247.3
+Electricity,High,1,14.2
+Electricity,High,2,10.3
+Other,Medium,0,64.5
+Street Light,Medium,3,46.6
+Drainage,Low,2,95.9
+Drainage,Medium,8,28.1
+Other,High,5,32.2
+Electricity,Low,1,62.2
+Other,Low,5,106.6
+Drainage,Medium,1,111.7
+Electricity,Medium,0,30.1
+Other,Medium,2,39.0
+Drainage,Medium,2,64.5
+Water,High,0,27.7
+Other,Medium,5,42.5
+Electricity,Medium,2,32.0
+Sanitation,Low,2,43.6
+Road,High,3,31.3
+Street Light,Medium,1,24.2
+Drainage,Medium,1,58.3
+Other,Medium,0,94.4
+Other,Medium,0,94.0
+Sanitation,Low,0,54.2
+Water,Medium,3,98.2
+Water,Medium,2,51.9
+Sanitation,Medium,1,21.7
+Water,Medium,0,73.8
+Road,High,3,54.9
+Electricity,Medium,1,20.3
+Electricity,Medium,8,44.7
+Sanitation,Medium,2,37.8
+Electricity,High,2,19.4
+Other,Medium,3,20.8
+Road,Medium,5,60.6
+Other,Medium,2,71.0
+Water,Low,0,142.3
+Water,Medium,0,34.3
+Road,Medium,1,109.3
+Electricity,High,0,4.8
+Road,Medium,2,121.9
+Water,Medium,0,72.7
+Other,High,5,15.5
+Drainage,Medium,1,68.7
+Sanitation,Medium,1,21.5
+Electricity,Medium,2,25.8
+Water,Low,8,150.0
+Other,High,0,32.1
+Street Light,Medium,1,14.0
+Water,High,0,40.2
+Road,Low,1,212.4
+Street Light,High,3,12.1
+Street Light,High,1,5.2
+Electricity,Medium,3,54.8
+Other,Medium,1,56.3
+Water,Low,5,33.9
+Drainage,High,2,52.2
+Street Light,Medium,2,36.4
+Sanitation,Medium,2,33.3
+Road,Medium,2,142.9
+Other,Low,0,30.6
+Electricity,Medium,1,33.0
+Electricity,Low,1,34.7
+Electricity,Low,0,25.1
+Road,Medium,1,86.8
+Street Light,Medium,1,11.0
+Electricity,Medium,0,24.9
+Drainage,Medium,0,118.0
+Road,Medium,0,205.4
+Road,Medium,0,57.8
+Other,Medium,2,37.2
+Road,Medium,8,78.7
+Drainage,High,0,26.2
+Street Light,Low,1,54.6
+Drainage,Low,8,27.0
+Electricity,Medium,1,27.7
+Road,High,2,88.2
+Water,Medium,2,41.0
+Road,Medium,3,92.0
+Water,High,8,30.7
+Other,Low,2,64.5
+Street Light,Medium,5,25.7
+Street Light,Medium,0,16.7
+Sanitation,High,3,8.3
+Drainage,Medium,0,84.9
+Sanitation,Medium,1,21.3
+Sanitation,Medium,3,20.7
+Road,High,2,98.4
+Electricity,Medium,1,73.1
+Street Light,Medium,3,22.2
+Sanitation,Low,0,37.0
+Sanitation,Medium,0,12.1
+Other,Low,1,42.5
+Sanitation,Medium,2,47.0
+Other,Medium,0,30.5
+Sanitation,High,5,7.1
+Electricity,Medium,1,56.5
+Electricity,Medium,0,18.4
+Other,High,0,15.5
+Street Light,Medium,1,14.4
+Drainage,Medium,0,179.6
+Street Light,Medium,0,12.4
+Electricity,Medium,0,39.0
+Other,High,2,21.2
+Water,High,0,28.0
+Street Light,High,1,7.4
+Drainage,Low,8,101.4
+Sanitation,Medium,1,43.2
+Street Light,Medium,1,25.9
+Sanitation,High,3,39.7
+Street Light,High,1,13.4
+Road,Medium,1,124.6
+Electricity,High,1,19.6
+Electricity,High,0,21.2
+Water,Low,2,63.8
+Water,Medium,2,46.9
+Street Light,Low,3,33.3
+Electricity,Medium,2,63.9
+Other,High,2,30.1
+Road,High,2,38.9
+Other,Medium,2,73.4
+Other,Medium,0,55.6
+Drainage,Low,8,84.2
+Street Light,High,0,6.0
+Road,Medium,2,56.6
+Water,Low,2,135.4
+Sanitation,Medium,3,27.5
+Road,Medium,0,90.3
+Drainage,Medium,0,35.6
+Sanitation,Medium,0,61.1
+Sanitation,Medium,5,24.9
+Drainage,Medium,1,59.9
+Electricity,High,0,14.7
+Electricity,Medium,5,30.4
+Road,Low,3,315.0
+Electricity,High,1,6.8
+Sanitation,Low,2,49.1
+Road,Medium,1,96.5
+Other,Medium,0,48.0
+Drainage,High,5,15.6
+Electricity,High,1,8.1
+Other,Low,1,44.7
+Drainage,Medium,5,86.2
+Other,High,3,97.5
+Other,Low,0,51.4
+Drainage,High,1,48.2
+Electricity,Medium,1,28.2
+Electricity,Medium,0,25.2
+Drainage,Low,0,43.1
+Water,Low,1,99.9
+Electricity,Medium,0,17.1
+Sanitation,High,8,16.3
+Street Light,Low,1,23.7
+Road,Medium,5,41.2
+Drainage,Medium,1,34.2
+Drainage,Medium,2,59.1
+Other,Low,3,117.9
+Water,Low,1,240.0
+Electricity,Medium,0,55.7
+Drainage,Medium,3,71.0
+Other,Medium,2,34.8
+Electricity,High,1,15.6
+Road,Medium,2,58.1
+Road,High,2,112.2
+Electricity,Medium,0,52.2
+Electricity,High,0,9.1
+Sanitation,Medium,2,30.2
+Street Light,Medium,0,17.5
+Sanitation,High,0,14.5
+Electricity,High,5,9.6
+Street Light,High,2,18.9
+Electricity,High,0,21.5
+Water,High,12,26.1
+Sanitation,Medium,2,26.7
+Sanitation,High,1,15.0
+Drainage,High,0,75.3
+Water,High,0,62.2
+Street Light,Medium,1,16.3
+Street Light,High,1,4.3
+Drainage,Medium,0,66.9
+Road,Medium,1,120.3
+Road,High,2,116.7
+Road,Medium,2,67.1
+Electricity,Medium,5,32.3
+Road,Medium,0,35.2
+Electricity,Low,2,33.1
+Road,High,1,46.2
+Street Light,Medium,5,16.3
+Drainage,High,5,48.8
+Water,Medium,1,34.4
+Drainage,Low,3,36.2
+Drainage,Medium,1,67.4
+Sanitation,High,3,8.6
+Electricity,Medium,0,54.7
+Road,High,1,113.1
+Road,High,2,39.2
+Other,Medium,0,46.1
+Drainage,Medium,1,48.7
+Road,Medium,1,113.5
+Electricity,High,0,26.6
+Drainage,High,0,41.2
+Street Light,Medium,5,15.0
+Street Light,Low,8,34.3
+Other,Medium,0,30.1
+Sanitation,Medium,1,39.8
+Electricity,Low,2,11.5
+Drainage,Medium,0,84.4
+Water,Medium,0,37.7
+Street Light,High,0,15.2
+Sanitation,High,1,15.7
+Sanitation,High,1,32.1
+Sanitation,Low,3,55.3
+Street Light,Medium,0,19.4
+Other,Low,1,61.5
+Drainage,Medium,1,60.6
+Water,Medium,2,111.2
+Water,High,2,22.3
+Road,Medium,3,92.4
+Sanitation,Medium,8,21.8
+Road,High,5,32.9
+Other,Low,1,76.7
+Road,Medium,0,53.0
+Drainage,Low,0,55.5
+Drainage,Medium,3,25.7
+Sanitation,Medium,0,28.5
+Electricity,Low,2,109.2
+Water,Medium,2,15.7
+Street Light,Medium,0,18.8
+Street Light,High,0,15.6
+Drainage,High,1,23.9
+Sanitation,High,0,17.2
+Drainage,High,0,36.3
+Street Light,Medium,2,24.4
+Sanitation,Medium,0,37.7
+Street Light,High,5,11.3
+Other,High,0,23.1
+Sanitation,High,1,59.8
+Drainage,Medium,0,123.2
+Street Light,High,0,3.9
+Sanitation,Medium,2,31.7
+Drainage,High,0,68.6
+Drainage,Low,2,43.8
+Road,Low,0,453.1
+Street Light,Low,0,24.7
+Other,Low,2,62.0
+Water,Medium,2,63.1
+Other,Low,1,41.5
+Road,Low,8,181.3
+Drainage,High,0,33.2
+Electricity,High,2,13.8
+Drainage,Medium,8,75.0
+Sanitation,High,8,21.3
+Water,Low,0,162.3
+Drainage,Medium,1,83.6
+Drainage,Medium,0,179.7
+Road,Low,0,114.0
+Drainage,Medium,1,104.7
+Sanitation,Medium,5,22.7
+Street Light,Low,3,21.0
+Other,Medium,1,79.2
+Drainage,Medium,3,74.2
+Road,Low,0,314.6
+Street Light,Low,0,18.4
+Sanitation,Medium,1,33.6
+Other,High,1,22.2
+Street Light,High,1,9.2
+Water,Medium,0,34.5
+Road,Medium,8,73.7
+Road,High,0,48.1
+Electricity,Low,1,113.1
+Drainage,Medium,1,187.2
+Road,Medium,1,104.7
+Other,Medium,0,35.6
+Street Light,Medium,2,18.0
+Sanitation,Low,1,54.0
+Street Light,High,2,19.3
+Other,Medium,12,47.0
+Street Light,Medium,0,30.4
+Water,High,1,21.6
+Street Light,Medium,0,10.8
+Other,Low,1,119.0
+Electricity,Medium,2,59.3
+Water,Medium,2,66.9
+Street Light,Medium,0,22.0
+Electricity,Low,0,122.8
+Sanitation,Medium,0,49.4
+Sanitation,Medium,5,33.7
+Other,Low,0,147.8
+Drainage,Medium,1,75.9
+Street Light,High,3,7.9
+Other,High,0,32.5
+Sanitation,Low,2,58.0
+Other,Medium,1,36.5
+Sanitation,Medium,0,58.9
+Road,High,2,51.1
+Drainage,High,1,40.4
+Sanitation,High,1,36.9
+Road,Medium,0,204.3
+Sanitation,High,5,7.3
+Electricity,Medium,8,56.0
+Water,High,2,18.9
+Road,Low,1,72.9
+Electricity,Medium,0,34.9
+Drainage,Medium,1,53.8
+Water,Medium,2,60.7
+Other,Medium,1,52.2
+Road,High,2,126.4
+Electricity,Medium,2,19.8
+Sanitation,High,0,13.4
+Electricity,Medium,3,84.1
+Sanitation,Medium,0,54.8
+Road,Low,2,79.5
+Street Light,Medium,0,12.1
+Other,Medium,8,17.8
+Sanitation,Medium,2,44.6
+Other,High,1,40.3
+Water,Medium,0,52.1
+Electricity,Low,12,26.0
+Road,High,5,57.8
+Road,Medium,2,60.0
+Water,High,1,75.0
+Water,Medium,2,42.9
+Other,High,5,29.2
+Water,High,5,27.1
+Street Light,Medium,1,39.7
+Electricity,Medium,5,28.0
+Electricity,High,0,31.7
+Drainage,Low,1,84.5
+Street Light,Medium,0,9.6
+Sanitation,Medium,0,21.2
+Water,Medium,1,63.0
+Other,Medium,3,78.3
+Electricity,Low,0,96.0
+Street Light,High,0,16.0
+Drainage,High,0,34.9
+Street Light,Medium,12,10.4
+Electricity,High,3,11.8
+Sanitation,High,0,14.8
+Water,Medium,2,82.9
+Road,Low,1,111.3
+Water,High,1,51.2
+Drainage,Medium,0,54.1
+Water,Medium,0,64.5
+Sanitation,High,1,13.4
+Street Light,High,5,7.4
+Other,Medium,5,55.5
+Electricity,Low,8,48.0
+Street Light,High,2,15.3
+Sanitation,Medium,0,59.1
+Sanitation,Medium,1,43.6
+Water,High,0,19.6
+Other,High,0,25.3
+Water,Medium,2,60.4
+Water,Low,1,146.3
+Sanitation,Low,2,64.1
+Road,High,3,70.5
+Water,Medium,2,113.6
+Other,Medium,2,29.8
+Street Light,Medium,0,43.8
+Sanitation,Medium,5,33.5
+Street Light,Medium,2,16.3
+Street Light,High,2,6.5
+Other,High,2,17.3
+Road,Medium,2,200.9
+Sanitation,High,5,14.2
+Road,Medium,3,78.0
+Road,Low,0,173.5
+Street Light,High,3,9.4
+Electricity,Medium,1,18.5
+Street Light,Low,0,61.8
+Other,Medium,2,38.4
+Drainage,Medium,2,77.3
+Other,Medium,5,44.1
+Water,Medium,1,68.0
+Other,High,1,31.7
+Other,Low,3,188.0
+Water,High,0,42.3
+Road,Low,0,309.1
+Road,Medium,5,167.9
+Electricity,Medium,0,46.5
+Electricity,High,0,31.5
+Other,Medium,5,70.7
+Electricity,Medium,0,41.9
+Electricity,Low,1,50.9
+Other,Low,3,34.5
+Other,Low,1,37.9
+Sanitation,High,8,14.9
+Street Light,High,0,13.5
+Sanitation,Medium,1,42.5
+Other,Medium,0,33.3
+Electricity,High,1,28.4
+Road,Medium,1,288.9
+Other,Medium,0,32.2
+Street Light,Medium,12,10.3
+Water,High,0,59.1
+Electricity,High,2,26.8
+Other,High,0,45.7
+Other,Low,0,20.6
+Road,High,0,92.0
+Water,Medium,5,104.4
+Drainage,Medium,1,81.8
+Drainage,High,1,30.2
+Street Light,Medium,2,36.9
+Other,Medium,5,34.0
+Water,Low,2,72.0
+Drainage,High,0,17.1
+Electricity,Low,1,53.6
+Electricity,Medium,0,21.3
+Sanitation,Medium,1,41.1
+Other,Low,2,88.8
+Water,Medium,1,71.0
+Other,Medium,2,15.3
+Road,Low,1,180.1
+Road,Medium,3,81.3
+Sanitation,Medium,0,37.5
+Electricity,Medium,2,12.1
+Water,Medium,2,168.3
+Other,High,0,44.4
+Drainage,Medium,3,65.6
+Water,High,3,47.5
+Street Light,Medium,2,17.2
+Road,Medium,0,77.7
+Drainage,High,3,49.7
+Other,Low,8,76.3
+Other,Medium,1,25.5
+Drainage,Low,5,103.4
+Water,Medium,0,98.8
+Electricity,Medium,8,14.9
+Street Light,Medium,5,13.1
+Sanitation,Medium,5,23.7
+Street Light,High,8,8.2
+Other,High,5,16.5
+Other,Medium,0,86.3
+Street Light,Low,0,32.8
+Drainage,High,5,36.9
+Street Light,Medium,1,13.5
+Road,Medium,0,93.1
+Electricity,Low,12,53.8
+Drainage,Medium,3,31.3
+Drainage,High,1,49.5
+Street Light,Medium,0,29.2
+Road,Low,1,223.5
+Road,Medium,3,63.3
+Street Light,Low,2,52.0
+Other,Low,8,24.9
+Street Light,High,0,12.3
+Other,Medium,3,40.1
+Sanitation,Medium,2,34.8
+Water,High,8,20.3
+Sanitation,Medium,0,51.3
+Drainage,Medium,1,94.5
+Electricity,Medium,0,20.6
+Water,Medium,3,25.8
+Water,High,3,15.0
+Street Light,High,1,15.0
+Electricity,Low,1,108.7
+Electricity,High,2,14.9
+Electricity,High,0,22.7
+Electricity,Medium,2,13.7
+Road,Medium,1,74.5
+Street Light,Medium,2,24.2
+Road,Low,1,59.4
+Road,High,2,55.0
+Other,Medium,1,59.7
+Electricity,Medium,0,38.0
+Electricity,Medium,1,54.4
+Other,Low,12,30.9
+Water,Medium,3,25.3
+Other,Medium,1,56.2
+Water,Medium,2,49.4
+Water,Medium,0,34.8
+Street Light,Medium,2,40.0
+Water,Low,0,134.9
+Electricity,Medium,1,45.1
+Water,High,12,51.9
+Street Light,Medium,1,30.5
+Drainage,High,0,135.5
+Road,High,2,83.2
+Road,High,5,87.6
+Road,High,2,94.6
+Other,Low,0,134.2
+Sanitation,Low,1,16.9
+Electricity,High,1,21.6
+Other,Medium,2,26.0
+Sanitation,Medium,1,21.0
+Sanitation,High,1,4.8
+Electricity,High,3,22.3
+Drainage,Medium,0,64.7
+Sanitation,Medium,0,32.6
+Other,Medium,0,103.4
+Water,Medium,0,29.5
+Water,Medium,2,120.2
+Street Light,Low,2,17.8
+Street Light,Low,1,46.5
+Water,Low,1,131.9
+Water,Medium,3,54.1
+Street Light,Medium,8,15.3
+Other,Medium,0,38.1
+Drainage,Medium,0,120.7
+Street Light,Low,0,27.6
+Sanitation,Low,2,63.4
+Other,Medium,0,22.8
+Electricity,Low,0,91.3
+Water,Low,2,91.9
+Road,High,1,97.5
+Road,Low,3,71.6
+Street Light,Medium,1,32.9
+Street Light,Medium,3,36.0
+Water,Low,5,55.7
+Street Light,Medium,8,16.8
+Drainage,Medium,3,77.1
+Street Light,High,0,11.9
+Water,Medium,2,65.5
+Street Light,Medium,2,54.9
+Electricity,High,2,7.1
+Electricity,High,12,13.7
+Water,High,3,27.8
+Street Light,Low,2,16.8
+Electricity,Medium,1,10.9
+Road,Low,0,119.7
+Sanitation,Medium,1,29.2
+Drainage,High,0,59.9
+Other,High,3,21.0
+Road,Medium,12,89.5
+Sanitation,Low,2,41.4
+Other,Medium,0,121.8
+Electricity,High,0,11.4
+Electricity,Low,3,69.9
+Other,Medium,5,51.8
+Other,Medium,0,25.1
+Road,Low,0,481.2
+Street Light,Medium,3,17.9
+Water,Medium,8,13.8
+Street Light,High,1,17.1
+Drainage,Low,2,51.0
+Water,High,8,11.8
+Road,Medium,0,70.4
+Sanitation,Medium,0,115.4
+Sanitation,Low,5,27.6
+Water,Medium,3,71.8
+Drainage,Medium,8,79.6
+Road,High,0,51.4
+Road,Low,0,189.4
+Street Light,Medium,1,7.2
+Road,High,0,49.1
+Drainage,Medium,2,71.4
+Street Light,Medium,8,13.3
+Street Light,Medium,3,39.3
+Street Light,Medium,0,13.3
+Water,Low,8,61.8
+Drainage,High,1,33.1
+Water,Medium,1,36.8
+Street Light,Medium,0,45.6
+Sanitation,High,2,10.7
+Road,Low,3,225.5
+Road,Medium,0,132.9
+Other,Medium,2,42.5
+Road,Medium,2,102.1
+Road,High,0,56.6
+Water,Medium,5,27.7
+Road,High,3,52.2
+Water,High,0,92.5
+Drainage,Medium,0,104.6
+Electricity,Low,2,116.1
+Other,Medium,8,59.3
+Electricity,Medium,1,46.1
+Road,High,3,52.3
+Street Light,Medium,0,16.4
+Road,Medium,5,81.7
+Water,High,1,13.6
+Water,Medium,8,63.6
+Other,High,0,29.6
+Sanitation,Medium,0,24.1
+Sanitation,Low,1,85.3
+Water,Medium,1,152.9
+Drainage,Medium,2,39.4
+Drainage,Medium,5,70.5
+Other,Medium,2,58.5
+Road,Medium,1,65.1
+Road,High,1,210.1
+Street Light,Medium,1,28.7
+Other,Medium,0,62.2
+Water,Medium,1,82.4
+Electricity,Medium,1,27.3
+Electricity,High,1,34.8
+Road,Medium,3,101.6
+Street Light,High,2,13.6
+Other,Low,1,48.8
+Other,High,2,47.5
+Water,Medium,1,47.5
+Electricity,High,8,7.4
+Street Light,Medium,2,20.1
+Drainage,Low,2,93.4
+Other,High,3,26.4
+Road,Medium,0,208.9
+Other,High,1,34.4
+Water,Medium,0,87.3
+Electricity,Medium,0,45.5
+Drainage,Medium,5,93.3
+Sanitation,Medium,2,23.1
+Road,High,1,98.7
+Water,Medium,2,59.5
+Sanitation,Medium,2,8.4
+Electricity,Medium,1,19.9
+Drainage,Medium,0,78.7
+Road,Medium,0,77.2
+Electricity,Low,5,34.9
+Electricity,Medium,0,26.9
+Street Light,High,8,10.1
+Other,Medium,0,38.9
+Drainage,Low,0,47.5
+Road,High,1,59.1
+Sanitation,High,8,27.9
+Street Light,High,2,20.4
+Sanitation,Medium,5,26.2
+Sanitation,Medium,1,16.5
+Other,High,2,15.9
+Electricity,High,1,14.0
+Drainage,Medium,1,192.0
+Road,High,1,105.2
+Drainage,Low,8,61.1
+Other,Low,1,80.1
+Road,High,1,146.5
+Street Light,Medium,2,30.8
+Electricity,Medium,0,68.4
+Drainage,Low,1,87.8
+Street Light,Medium,2,39.8
+Other,Low,0,38.0
+Sanitation,High,1,37.3
+Drainage,Medium,5,78.9
+Other,Medium,0,89.1
+Water,Medium,0,52.1
+Road,Medium,2,77.5
+Other,Medium,0,51.0
+Street Light,Medium,5,10.7
+Electricity,Medium,2,28.5
+Street Light,Medium,12,16.2
+Other,Medium,0,65.5
+Road,Medium,1,146.1
+Street Light,High,0,17.6
+Road,Low,0,77.5
+Sanitation,Medium,8,21.8
+Sanitation,High,2,20.5
+Other,High,2,6.2
+Street Light,Medium,1,25.2
+Road,Medium,3,115.7
+Other,High,5,14.6
+Sanitation,Medium,3,65.9
+Water,Low,2,141.1
+Drainage,Medium,0,92.6
+Road,Medium,1,127.1
+Electricity,Medium,2,22.1
+Electricity,High,0,9.9
+Sanitation,High,0,27.8
+Street Light,Medium,1,32.1
+Street Light,Low,1,5.6
+Electricity,Medium,0,26.5
+Electricity,Low,0,19.9
+Drainage,Low,1,151.4
+Road,Low,8,89.2
+Drainage,Medium,2,82.7
+Drainage,Low,0,82.8
+Drainage,High,3,50.2
+Sanitation,Medium,0,22.5
+Street Light,Medium,8,11.9
+Sanitation,Medium,0,41.3
+Road,Low,1,50.4
+Other,High,0,46.5
+Water,High,3,47.6
+Electricity,Medium,2,34.6
+Electricity,High,1,26.1
+Drainage,Medium,5,52.9
+Other,High,1,27.9
+Street Light,Low,2,59.6
+Sanitation,Low,3,25.1
+Other,Medium,2,28.4
+Drainage,Medium,2,119.9
+Water,High,1,22.7
+Electricity,Low,0,73.9
+Water,High,2,16.5
+Sanitation,Low,12,27.2
+Other,Medium,2,50.3
+Sanitation,Medium,1,31.4
+Electricity,Medium,1,28.8
+Water,Medium,3,47.3
+Electricity,Medium,1,62.0
+Electricity,High,5,10.6
+Street Light,Medium,2,13.2
+Road,High,5,70.1
+Drainage,Low,1,82.3
+Sanitation,Medium,12,19.5
+Drainage,Low,1,125.7
+Other,Medium,0,30.5
+Drainage,Low,2,68.9
+Street Light,Medium,0,48.1
+Road,High,1,92.7
+Other,High,2,30.3
+Other,Low,0,153.0
+Drainage,High,5,37.3
+Sanitation,High,1,27.6
+Road,Medium,5,193.9
+Water,High,5,19.2
+Sanitation,Low,2,62.5
+Water,Medium,0,29.0
+Sanitation,Medium,3,32.0
+Drainage,Low,2,91.6
+Drainage,Low,0,154.7
+Road,High,2,42.5
+Street Light,High,2,10.3
+Water,Medium,0,114.5
+Electricity,Low,2,131.8
+Other,Low,2,29.5
+Road,Medium,0,145.5
+Water,Low,5,74.7
+Drainage,Medium,1,89.1
+Sanitation,Medium,1,19.3
+Drainage,High,8,41.5
+Other,Medium,1,36.5
+Water,Low,2,63.9
+Road,Medium,12,57.5
+Street Light,Medium,3,24.9
+Water,Medium,1,118.1
+Drainage,Medium,2,43.2
+Drainage,Medium,0,117.4
+Other,Medium,8,24.3
+Street Light,Medium,1,10.6
+Drainage,Medium,0,38.7
+Electricity,Low,0,92.5
+Street Light,Medium,0,16.2
+Sanitation,Medium,2,26.6
+Street Light,High,1,5.5
+Electricity,Medium,5,22.8
+Water,Medium,1,46.6
+Drainage,Medium,2,44.5
+Sanitation,Medium,1,48.4
+Road,Low,1,261.7
+Sanitation,High,5,25.7
+Water,Medium,1,30.1
+Road,Medium,5,64.3
+Other,Low,1,68.1
+Other,Low,2,60.7
+Water,High,2,47.5
+Electricity,High,0,8.1
+Other,High,0,29.4
+Other,High,2,20.8
+Electricity,Low,2,24.8
+Water,Low,1,203.3
+Sanitation,Medium,5,34.8
+Electricity,High,2,21.1
+Electricity,Low,1,41.2
+Drainage,Low,0,155.6
+Road,Low,1,84.6
+Water,Medium,0,163.9
+Road,Medium,1,390.7
+Sanitation,Low,0,15.0
+Other,Medium,0,38.7
+Sanitation,Medium,1,26.3
+Drainage,High,0,61.3
+Street Light,Medium,0,10.7
+Street Light,Medium,2,49.3
+Street Light,Medium,0,22.3
+Drainage,Medium,1,41.0
+Drainage,Medium,1,79.2
+Street Light,Low,3,26.3
+Road,Low,2,140.0
+Street Light,Medium,2,28.7
+Water,Medium,2,75.8
+Sanitation,Medium,5,34.1
+Street Light,Medium,2,12.3
+Street Light,High,2,12.2
+Street Light,Medium,0,32.6
+Sanitation,High,1,22.9
+Water,Medium,2,71.1
+Street Light,Medium,3,15.9
+Road,Medium,0,169.6
+Street Light,Medium,0,20.8
+Road,High,2,50.4
+Road,Medium,1,42.6
+Other,High,2,39.7
+Road,Medium,2,115.3
+Drainage,Medium,5,37.0
+Road,High,1,52.2
+Water,Low,0,106.4
+Drainage,Low,1,46.2
+Sanitation,Low,2,54.4
+Street Light,Medium,1,12.8
+Water,Medium,0,37.4
+Water,Low,2,44.2
+Water,Low,2,43.0
+Street Light,Medium,0,11.5
+Sanitation,Medium,0,27.9
+Water,High,5,21.0
+Road,Medium,2,106.1
+Street Light,High,0,16.8
+Street Light,High,0,11.1
+Road,Medium,5,77.9
+Drainage,Medium,0,53.2
+Street Light,Medium,3,26.7
+Other,High,2,17.9
+Sanitation,Medium,1,32.0
+Sanitation,Medium,2,20.7
+Other,High,0,14.7
+Road,Low,0,326.4
+Road,Medium,2,96.0
+Electricity,High,5,16.4
+Street Light,Medium,0,36.2
+Water,Low,0,63.4
+Electricity,Medium,0,56.3
+Drainage,Medium,2,69.7
+Drainage,Medium,12,54.0
+Street Light,Low,3,20.9
+Other,High,0,23.0
+Road,Medium,3,94.7
+Drainage,Medium,12,21.3
+Drainage,High,1,35.8
+Road,High,1,124.0
+Road,High,2,14.5
+Water,High,12,48.3
+Road,Medium,0,229.0
+Other,Medium,5,23.9
+Sanitation,Medium,1,17.4
+Other,High,0,23.4
+Road,Medium,1,133.8
+Road,High,1,94.4
+Street Light,High,12,9.5
+Electricity,High,0,15.6
+Other,High,0,33.0
+Drainage,Low,12,135.3
+Other,High,2,44.0
+Sanitation,High,3,6.1
+Other,High,0,47.8
+Electricity,Medium,1,11.3
+Drainage,Low,1,55.9
+Road,High,0,34.5
+Road,High,1,70.0
+Drainage,Medium,1,81.1
+Electricity,Medium,2,67.7
+Road,High,2,54.4
+Electricity,Low,0,48.3
+Road,High,1,39.2
+Drainage,Medium,0,56.8
+Road,Medium,0,128.5
+Drainage,Medium,1,72.7
+Other,High,1,9.6
+Other,Medium,2,51.0
+Sanitation,Medium,0,11.7
+Other,High,1,30.0
+Water,Medium,2,45.6
+Other,Low,0,60.7
+Electricity,Medium,2,57.4
+Water,High,1,37.1
+Water,Low,2,80.9
+Water,Medium,5,171.7
+Water,Medium,3,60.5
+Other,Low,1,141.1
+Other,High,2,48.6
+Electricity,Medium,1,82.2
+Water,Low,3,186.8
+Electricity,High,1,7.6
+Other,Low,0,106.6
+Other,Medium,0,72.5
+Water,High,1,24.8
+Sanitation,Medium,1,30.2
+Sanitation,Medium,3,28.8
+Sanitation,Medium,0,21.5
+Other,Medium,12,19.1
+Street Light,Low,0,18.2
+Other,Low,1,49.0
+Water,High,3,19.1
+Water,Medium,1,29.4
+Water,Medium,1,49.8
+Sanitation,Low,1,67.2
+Street Light,High,1,5.8
+Other,Medium,2,78.5
+Drainage,Medium,12,26.1
+Other,Medium,8,71.2
+Road,Medium,0,59.2
+Water,High,1,27.6
+Road,Medium,1,114.5
+Electricity,High,1,18.3
+Street Light,Medium,2,23.6
+Water,Low,0,118.9
+Road,Low,0,163.0
+Electricity,Medium,2,18.2
+Water,Medium,2,74.7
+Street Light,Medium,1,11.5
+Road,Medium,1,77.2
+Other,Medium,1,181.8
+Road,High,8,15.9
+Other,High,0,21.0
+Electricity,Medium,0,28.4
+Electricity,Low,3,48.2
+Other,Low,1,196.0
+Electricity,Medium,0,56.3
+Street Light,Low,0,43.1
+Other,Low,0,40.6
+Drainage,Low,2,53.6
+Drainage,Medium,2,23.3
+Drainage,Medium,1,104.3
+Water,High,1,39.8
+Road,High,5,43.0
+Street Light,High,2,11.6
+Drainage,Medium,0,64.8
+Water,Medium,8,30.3
+Drainage,Low,2,69.6
+Sanitation,Medium,0,17.2
+Road,Medium,2,109.4
+Street Light,High,0,22.8
+Road,High,0,55.5
+Other,Medium,0,115.9
+Other,Low,0,126.4
+Road,Medium,1,76.0
+Sanitation,High,1,17.0
+Sanitation,Low,0,34.6
+Water,Low,0,64.5
+Sanitation,Medium,8,60.2
+Sanitation,Low,1,43.9
+Road,High,1,85.3
+Street Light,High,1,8.4
+Road,High,0,90.0
+Other,Medium,0,58.5
+Water,Medium,0,223.4
+Drainage,Medium,2,64.4
+Water,Medium,3,37.8
+Street Light,High,5,11.4
+Road,Medium,1,137.6
+Water,Medium,0,24.0
+Electricity,Medium,1,33.4
+Other,High,1,27.1
+Street Light,Medium,2,24.6
+Drainage,Medium,1,82.9
+Drainage,Low,2,143.4
+Other,High,5,31.9
+Other,High,2,27.0
+Drainage,High,12,16.6
+Other,Low,2,225.8
+Water,High,2,42.3
+Sanitation,High,0,16.4
+Drainage,Low,8,83.0
+Street Light,Medium,5,12.6
+Electricity,Low,1,40.6
+Road,High,2,98.6
+Drainage,Low,2,89.1
+Water,High,2,18.8
+Drainage,Medium,2,64.0
+Drainage,High,0,32.3
+Sanitation,Medium,0,19.6
+Street Light,Low,2,43.0
+Other,Medium,2,23.8
+Drainage,Medium,0,49.4
+Street Light,High,2,23.5
+Street Light,Low,2,29.1
+Street Light,Medium,1,27.6
+Road,Medium,1,183.9
+Street Light,Medium,1,28.2
+Drainage,Medium,3,47.3
+Sanitation,Medium,12,11.8
+Electricity,High,1,43.7
+Street Light,Medium,1,11.5
+Road,Low,3,167.2
+Other,Low,3,35.6
+Drainage,Medium,1,27.8
+Other,Medium,2,40.3
+Street Light,High,0,7.6
+Water,Low,1,74.6
+Drainage,Medium,0,28.1
+Drainage,High,8,17.8
+Water,Medium,1,27.0

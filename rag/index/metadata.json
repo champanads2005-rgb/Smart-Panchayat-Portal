@@ -1,0 +1,117 @@
+[
+  {
+    "source": "complaint_categories.md",
+    "heading": "Complaint Categories",
+    "text": "The Smart Panchayat Portal accepts complaints in the following categories: Water, Electricity, Road, Sanitation, Street Light, Drainage, and Other. - Water: drinking water supply, pipeline leaks, water quality, borewell and tank issues. - Electricity: power cuts, transformer problems, damaged poles, exposed wiring, meter issues. - Road: potholes, road damage, missing dividers, missing speed breakers. - Sanitation: uncollected garbage, public toilet"
+  },
+  {
+    "source": "complaint_categories.md",
+    "heading": "Complaint Categories",
+    "text": "Road: potholes, road damage, missing dividers, missing speed breakers. - Sanitation: uncollected garbage, public toilet maintenance, sewage overflow, waste management. - Street Light: broken or missing street lights. - Drainage: blocked or overflowing drains, stagnant water, missing drain covers. - Other: anything that does not fit the above categories, such as stray animal issues, community facility requests, or noise complaints."
+  },
+  {
+    "source": "complaint_categories.md",
+    "heading": "Complaint Categories",
+    "text": "fit the above categories, such as stray animal issues, community facility requests, or noise complaints. When you submit a complaint, the portal's AI classifier suggests a category based on your description, but you can always pick a different category yourself before submitting. The AI suggestion is optional and never applied automatically."
+  },
+  {
+    "source": "complaint_status_workflow.md",
+    "heading": "Complaint Status Workflow",
+    "text": "Every complaint moves through a status field that can be one of: Submitted, Under Review, Assigned, In Progress, Resolved, or Rejected. - Submitted: the complaint has been received by the portal. This is the automatic starting status the moment you submit the form. - Under Review: a Panchayat officer or admin is looking into the complaint to verify details before"
+  },
+  {
+    "source": "complaint_status_workflow.md",
+    "heading": "Complaint Status Workflow",
+    "text": "Review: a Panchayat officer or admin is looking into the complaint to verify details before acting on it. - Assigned: the complaint has been assigned to a specific officer or department for action. - In Progress: work on resolving the complaint has started. - Resolved: the issue has been fixed and the complaint is closed. - Rejected: the complaint was"
+  },
+  {
+    "source": "complaint_status_workflow.md",
+    "heading": "Complaint Status Workflow",
+    "text": "the issue has been fixed and the complaint is closed. - Rejected: the complaint was reviewed and could not be acted on (for example, insufficient information, or it falls outside Panchayat jurisdiction). Every status change is recorded with a timestamp in the complaint's tracking history, which you can see on the \"Track Complaint\" page. Only an officer or admin can"
+  },
+  {
+    "source": "complaint_status_workflow.md",
+    "heading": "Complaint Status Workflow",
+    "text": "which you can see on the \"Track Complaint\" page. Only an officer or admin can change a complaint's status."
+  },
+  {
+    "source": "duplicate_complaints_policy.md",
+    "heading": "Possibly Related or Duplicate Complaints",
+    "text": "When an officer or admin opens a complaint for review, the portal shows a list of other complaints in the same category that are textually similar to it, based on an AI similarity score. This is meant to help staff notice when several citizens are reporting the same underlying issue (for example, the same broken street light reported by different"
+  },
+  {
+    "source": "duplicate_complaints_policy.md",
+    "heading": "Possibly Related or Duplicate Complaints",
+    "text": "reporting the same underlying issue (for example, the same broken street light reported by different households). This feature is informational only. The portal does **not** automatically merge, delete, or close complaints it flags as similar \u2014 an officer or admin must review the flagged complaints and decide manually whether to link or act on them together. Submitting a complaint that"
+  },
+  {
+    "source": "duplicate_complaints_policy.md",
+    "heading": "Possibly Related or Duplicate Complaints",
+    "text": "and decide manually whether to link or act on them together. Submitting a complaint that turns out to be similar to an existing one does not prevent it from being tracked and resolved on its own."
+  },
+  {
+    "source": "escalation_and_contact.md",
+    "heading": "Escalation and Contact",
+    "text": "If you are not satisfied with how your complaint has been handled, the best first step is to check its current status and history on the \"Track Complaint\" page \u2014 an officer may have already left a status update explaining what's happening. This version of the portal does not have a separate automated escalation queue for reopening or disputing a"
+  },
+  {
+    "source": "escalation_and_contact.md",
+    "heading": "Escalation and Contact",
+    "text": "the portal does not have a separate automated escalation queue for reopening or disputing a Resolved or Rejected complaint. If you believe a complaint was closed incorrectly or needs further attention, contact your local Panchayat office directly through their normal channels, outside this portal, and reference your complaint ID. The AI assistant on this portal can help you understand how"
+  },
+  {
+    "source": "escalation_and_contact.md",
+    "heading": "Escalation and Contact",
+    "text": "reference your complaint ID. The AI assistant on this portal can help you understand how the complaint system works, but it cannot change a complaint's status, reopen a closed complaint, or contact an officer on your behalf."
+  },
+  {
+    "source": "how_to_submit_complaint.md",
+    "heading": "How to Submit a Complaint",
+    "text": "1. Log in to your citizen account and go to \"Submit Complaint\". 2. Enter a short title for your complaint. 3. Write a description of the problem. As you type, the portal's AI may suggest a category and a priority level based on your wording \u2014 these are optional suggestions you can accept or ignore. 4. Choose a category from"
+  },
+  {
+    "source": "how_to_submit_complaint.md",
+    "heading": "How to Submit a Complaint",
+    "text": "\u2014 these are optional suggestions you can accept or ignore. 4. Choose a category from the dropdown (Water, Electricity, Road, Sanitation, Street Light, Drainage, or Other). 5. Choose a priority level (Low, Medium, or High), either manually or by accepting the AI suggestion. 6. Click \"Submit Complaint\". Once submitted, your complaint starts in \"Submitted\" status and you can track its"
+  },
+  {
+    "source": "how_to_submit_complaint.md",
+    "heading": "How to Submit a Complaint",
+    "text": "\"Submit Complaint\". Once submitted, your complaint starts in \"Submitted\" status and you can track its progress at any time from \"Track Complaint\" using your account. You will also see an estimated resolution time there, which is an AI estimate and not a guaranteed deadline."
+  },
+  {
+    "source": "priority_levels.md",
+    "heading": "Priority Levels",
+    "text": "Complaints can have one of three priority levels: Low, Medium, or High. Priority affects how urgently a complaint is expected to be handled by Panchayat officers, but it does not change what category the complaint belongs to. When you fill in a complaint's description and category, the portal's AI can suggest a priority level, along with a rough confidence score"
+  },
+  {
+    "source": "priority_levels.md",
+    "heading": "Priority Levels",
+    "text": "category, the portal's AI can suggest a priority level, along with a rough confidence score and the factors that influenced the suggestion (for example, urgent wording in your description, or a number of similar recent complaints already reported in your village). This is only a suggestion \u2014 you must click \"Use this\" for it to be applied, and you can"
+  },
+  {
+    "source": "priority_levels.md",
+    "heading": "Priority Levels",
+    "text": "suggestion \u2014 you must click \"Use this\" for it to be applied, and you can always choose a different priority yourself. Officers can also change a complaint's priority during review. The AI priority model is a genuinely trained classifier, but it was bootstrapped on synthetic example data because the portal had no real historical complaint history to learn from at"
+  },
+  {
+    "source": "priority_levels.md",
+    "heading": "Priority Levels",
+    "text": "example data because the portal had no real historical complaint history to learn from at the time it was built. Its accuracy on real citizen complaints has not yet been separately measured."
+  },
+  {
+    "source": "tracking_and_resolution_estimates.md",
+    "heading": "Tracking Your Complaint and Resolution-Time Estimates",
+    "text": "You can track any complaint you've submitted from the \"Track Complaint\" page, which shows the current status and the full history of status changes with timestamps. If your complaint is still open (not Resolved or Rejected), the page also shows an AI-estimated resolution time in days. This estimate is based on the complaint's category, its priority, and how many similar"
+  },
+  {
+    "source": "tracking_and_resolution_estimates.md",
+    "heading": "Tracking Your Complaint and Resolution-Time Estimates",
+    "text": "days. This estimate is based on the complaint's category, its priority, and how many similar complaints have recently been reported in your village. It is **an estimate, not a guaranteed deadline** \u2014 actual resolution time depends on real-world factors the model doesn't know about, such as officer availability, weather, or material supply. If the estimate was produced by a model"
+  },
+  {
+    "source": "tracking_and_resolution_estimates.md",
+    "heading": "Tracking Your Complaint and Resolution-Time Estimates",
+    "text": "as officer availability, weather, or material supply. If the estimate was produced by a model still trained on bootstrap/example data rather than real historical resolutions, the portal marks it as a lower-confidence estimate."
+  }
+]

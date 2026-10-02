@@ -1,0 +1,22 @@
+Selected model: random_forest
+Classes: ['Plain', 'Pothole']
+Train/val/test sizes: 545/68/70
+
+Validation macro-F1 by candidate:
+  logistic_regression: 0.9407
+  linear_svm_calibrated: 0.9261
+  random_forest: 0.9411
+
+Held-out TEST accuracy: 0.9571
+Held-out TEST macro-F1: 0.9571
+Held-out TEST ROC-AUC (Pothole positive class): 0.994281045751634
+
+Per-class precision/recall/F1 (test):
+  Plain: precision=0.970 recall=0.941 f1=0.955 support=34
+  Pothole: precision=0.946 recall=0.972 f1=0.959 support=36
+
+Confusion matrix (rows=actual, cols=predicted), labels=['Plain', 'Pothole']:
+  [32, 2]
+  [1, 35]
+
+Note: mAP is not applicable - this is a whole-image binary classifier, not an object detector with bounding boxes.

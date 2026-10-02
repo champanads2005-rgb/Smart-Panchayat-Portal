@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+```
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>Login - Smart Panchayat</title>
+
+<style>
+
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+    }
+
+    body {
+        min-height: 100vh;
+        background: linear-gradient(135deg, #eef6ff, #f8fbff);
+        color: #1f2937;
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* ================= HEADER ================= */
+
+    .header {
+        background: linear-gradient(135deg, #123b63, #2563a6);
+        color: white;
+        padding: 17px 6%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+    }
+
+    .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .brand-icon {
+        width: 43px;
+        height: 43px;
+        background: rgba(255, 255, 255, 0.15);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 23px;
+    }
+
+    .brand h1 {
+        font-size: 22px;
+        margin-bottom: 3px;
+    }
+
+    .brand p {
+        font-size: 11px;
+        opacity: 0.85;
+    }
+
+    .home-link {
+        color: white;
+        text-decoration: none;
+        background: rgba(255, 255, 255, 0.13);
+        padding: 9px 15px;
+        border-radius: 8px;
+        font-size: 13px;
+        font-weight: bold;
+    }
+
+    .home-link:hover {
+        background: rgba(255, 255, 255, 0.22);
+    }
+
+    /* ================= MAIN ================= */
+
+    .main {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 45px 20px;
+    }
+
+    .login-box {
+        width: 100%;
+        max-width: 440px;
+        background: white;
+        padding: 38px;
+        border-radius: 18px;
+        box-shadow: 0 10px 35px rgba(15, 23, 42, 0.09);
+        border: 1px solid #e5edf5;
+    }
+
+    .login-icon {
+        width: 65px;
+        height: 65px;
+        margin: 0 auto 20px;
+        border-radius: 18px;
+        background: #eff6ff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 30px;
+    }
+
+    .heading {
+        text-align: center;
+        margin-bottom: 28px;
+    }
+
+    .heading h2 {
+        color: #123b63;
+        font-size: 27px;
+        margin-bottom: 8px;
+    }
+
+    .heading p {
+        color: #6b7280;
+        font-size: 14px;
+    }
+
+    /* ================= FORM ================= */
+
+    .form-group {
+        margin-bottom: 19px;
+    }
+
+    label {
+        display: block;
+        color: #374151;
+        font-weight: bold;
+        font-size: 13px;
+        margin-bottom: 8px;
+    }
+
+    .input-wrapper {
+        position: relative;
+    }
+
+    .input-icon {
+        position: absolute;
+        left: 13px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 16px;
+    }
+
+    input {
+        width: 100%;
+        padding: 13px 14px 13px 42px;
+        border: 1px solid #d7e0e9;
+        border-radius: 9px;
+        font-size: 14px;
+        outline: none;
+        transition: 0.2s;
+        background: #fbfdff;
+    }
+
+    input:focus {
+        border-color: #2563a6;
+        background: white;
+        box-shadow: 0 0 0 3px rgba(37, 99, 166, 0.10);
+    }
+
+    input::placeholder {
+        color: #9ca3af;
+    }
+
+    /* ================= BUTTON ================= */
+
+    .login-btn {
+        width: 100%;
+        padding: 13px;
+        margin-top: 5px;
+        background: linear-gradient(135deg, #1d5d96, #2563a6);
+        color: white;
+        border: none;
+        border-radius: 9px;
+        font-size: 15px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.2s;
+    }
+
+    .login-btn:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 6px 16px rgba(37, 99, 166, 0.25);
+    }
+
+    /* ================= REGISTER ================= */
+
+    .register-link {
+        text-align: center;
+        margin-top: 24px;
+        padding-top: 20px;
+        border-top: 1px solid #edf0f4;
+        color: #6b7280;
+        font-size: 13px;
+    }
+
+    .register-link a {
+        color: #2563a6;
+        text-decoration: none;
+        font-weight: bold;
+        margin-left: 4px;
+    }
+
+    .register-link a:hover {
+        text-decoration: underline;
+    }
+
+    /* ================= FOOTER ================= */
+
+    .footer {
+        text-align: center;
+        padding: 18px;
+        color: #94a3b8;
+        font-size: 11px;
+    }
+
+    /* ================= MOBILE ================= */
+
+    @media (max-width: 600px) {
+
+        .header {
+            padding: 14px 20px;
+        }
+
+        .brand h1 {
+            font-size: 18px;
+        }
+
+        .brand p {
+            display: none;
+        }
+
+        .home-link {
+            padding: 8px 12px;
+        }
+
+        .main {
+            padding: 30px 18px;
+        }
+
+        .login-box {
+            padding: 28px 22px;
+        }
+
+        .heading h2 {
+            font-size: 24px;
+        }
+
+    }
+
+</style>
+```
+
+</head>
+
+<body>
+
+```
+<!-- ================= HEADER ================= -->
+
+<div class="header">
+
+    <div class="brand">
+
+        <div class="brand-icon">
+            🏛️
+        </div>
+
+        <div>
+
+            <h1>
+                Smart Panchayat
+            </h1>
+
+            <p>
+                Digital Governance & Citizen Services
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <a href="/"
+       class="home-link">
+
+        ← Home
+
+    </a>
+
+</div>
+
+
+<!-- ================= LOGIN ================= -->
+
+<main class="main">
+
+    <div class="login-box">
+
+        <div class="login-icon">
+            🔐
+        </div>
+
+
+        <div class="heading">
+
+            <h2>
+                Welcome Back
+            </h2>
+
+            <p>
+                Login to access your Panchayat services
+            </p>
+
+        </div>
+
+
+        <form method="POST">
+
+            <input
+                type="hidden"
+                name="csrf_token"
+                value="{{ csrf_token }}"
+            >
+
+
+            <div class="form-group">
+
+                <label for="email">
+                    Email Address
+                </label>
+
+                <div class="input-wrapper">
+
+                    <span class="input-icon">
+                        ✉️
+                    </span>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Enter your email"
+                        autocomplete="email"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="password">
+                    Password
+                </label>
+
+                <div class="input-wrapper">
+
+                    <span class="input-icon">
+                        🔑
+                    </span>
+
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Enter your password"
+                        autocomplete="current-password"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="login-btn">
+
+                Login to Portal →
+
+            </button>
+
+        </form>
+
+
+        <div class="register-link">
+
+            Don't have an account?
+
+            <a href="{{ url_for('register') }}">
+                Create an account
+            </a>
+
+        </div>
+
+    </div>
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<div class="footer">
+
+    Smart Panchayat Portal • Secure Citizen Access
+
+</div>
+```
+
+</body>
+
+</html>

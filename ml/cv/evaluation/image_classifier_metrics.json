@@ -1,0 +1,66 @@
+{
+  "model_name": "random_forest",
+  "trained_on": "real_web_scraped",
+  "dataset_source": "https://github.com/Somashekarbm/PotholeDetection (My Dataset folder)",
+  "classes": [
+    "Plain",
+    "Pothole"
+  ],
+  "supported_classes_for_ui": [
+    "Pothole"
+  ],
+  "feature_pipeline": "HOG (grayscale) + HSV color histogram, 128x128",
+  "n_train": 545,
+  "n_val": 68,
+  "n_test": 70,
+  "val_macro_f1_by_candidate": {
+    "logistic_regression": 0.9407149084568439,
+    "linear_svm_calibrated": 0.9260708849749946,
+    "random_forest": 0.9411255411255411
+  },
+  "test_accuracy": 0.9571428571428572,
+  "test_macro_f1": 0.957063995093028,
+  "test_roc_auc": 0.994281045751634,
+  "test_classification_report": {
+    "Plain": {
+      "precision": 0.9696969696969697,
+      "recall": 0.9411764705882353,
+      "f1-score": 0.9552238805970149,
+      "support": 34.0
+    },
+    "Pothole": {
+      "precision": 0.9459459459459459,
+      "recall": 0.9722222222222222,
+      "f1-score": 0.958904109589041,
+      "support": 36.0
+    },
+    "accuracy": 0.9571428571428572,
+    "macro avg": {
+      "precision": 0.9578214578214579,
+      "recall": 0.9566993464052287,
+      "f1-score": 0.957063995093028,
+      "support": 70.0
+    },
+    "weighted avg": {
+      "precision": 0.9574821574821576,
+      "recall": 0.9571428571428572,
+      "f1-score": 0.957116569792914,
+      "support": 70.0
+    }
+  },
+  "test_confusion_matrix": [
+    [
+      32,
+      2
+    ],
+    [
+      1,
+      35
+    ]
+  ],
+  "confusion_matrix_labels": [
+    "Plain",
+    "Pothole"
+  ],
+  "note": "mAP is not applicable: this is a whole-image binary classifier with no bounding boxes, not an object detector."
+}

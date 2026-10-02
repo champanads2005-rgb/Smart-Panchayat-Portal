@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+```
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>Manage Citizens - Smart Panchayat</title>
+
+<style>
+
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+    }
+
+    body {
+        background: #f4f7fb;
+        color: #333;
+        min-height: 100vh;
+    }
+
+    /* ================= HEADER ================= */
+
+    .header {
+        background: linear-gradient(135deg, #1e3a5f, #28527a);
+        color: white;
+        padding: 18px 5%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 3px 12px rgba(0, 0, 0, 0.12);
+    }
+
+    .logo-area {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .logo-icon {
+        width: 44px;
+        height: 44px;
+        background: rgba(255, 255, 255, 0.15);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 23px;
+    }
+
+    .logo {
+        font-size: 22px;
+        font-weight: bold;
+    }
+
+    .header-right {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .admin-badge {
+        background: rgba(255, 255, 255, 0.15);
+        padding: 9px 14px;
+        border-radius: 20px;
+        font-size: 13px;
+    }
+
+    .logout {
+        background: #e74c3c;
+        color: white;
+        text-decoration: none;
+        padding: 10px 17px;
+        border-radius: 8px;
+        font-size: 14px;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    .logout:hover {
+        background: #c0392b;
+        transform: translateY(-2px);
+    }
+
+    /* ================= CONTAINER ================= */
+
+    .container {
+        width: 92%;
+        max-width: 1300px;
+        margin: 35px auto 60px;
+    }
+
+    /* ================= TOP AREA ================= */
+
+    .top-area {
+        margin-bottom: 25px;
+    }
+
+    .back-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        margin-bottom: 20px;
+        padding: 10px 15px;
+        background: white;
+        color: #1e3a5f;
+        text-decoration: none;
+        border-radius: 8px;
+        font-size: 13px;
+        font-weight: bold;
+        border: 1px solid #dfe5eb;
+        transition: 0.25s;
+    }
+
+    .back-btn:hover {
+        background: #eef4fa;
+        transform: translateX(-2px);
+    }
+
+    .title h2 {
+        color: #1e3a5f;
+        font-size: 29px;
+        margin-bottom: 7px;
+    }
+
+    .title p {
+        color: #666;
+        font-size: 15px;
+    }
+
+    /* ================= SUMMARY ================= */
+
+    .summary {
+        margin-top: 20px;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        background: white;
+        border: 1px solid #e4e9ef;
+        padding: 10px 15px;
+        border-radius: 9px;
+        color: #555;
+        font-size: 13px;
+        box-shadow: 0 3px 12px rgba(0, 0, 0, 0.04);
+    }
+
+    .summary strong {
+        color: #1e3a5f;
+        font-size: 16px;
+    }
+
+    /* ================= TABLE ================= */
+
+    .table-container {
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0 5px 18px rgba(0, 0, 0, 0.07);
+        overflow-x: auto;
+        border: 1px solid #edf0f4;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        min-width: 850px;
+    }
+
+    th {
+        background: #1e3a5f;
+        color: white;
+        padding: 15px 14px;
+        text-align: left;
+        font-size: 13px;
+        white-space: nowrap;
+    }
+
+    td {
+        padding: 14px;
+        border-bottom: 1px solid #edf0f4;
+        font-size: 13px;
+        vertical-align: middle;
+    }
+
+    tbody tr {
+        transition: 0.2s;
+    }
+
+    tbody tr:hover {
+        background: #f8fafc;
+    }
+
+    tbody tr:last-child td {
+        border-bottom: none;
+    }
+
+    .id {
+        color: #1e3a5f;
+        font-weight: bold;
+    }
+
+    .name {
+        font-weight: bold;
+        color: #333;
+    }
+
+    .email {
+        color: #555;
+    }
+
+    .phone {
+        white-space: nowrap;
+        color: #555;
+    }
+
+    .village {
+        color: #555;
+    }
+
+    /* ================= ROLE ================= */
+
+    .role {
+        display: inline-block;
+        background: #dbeafe;
+        color: #1e40af;
+        padding: 6px 11px;
+        border-radius: 20px;
+        font-size: 11px;
+        font-weight: bold;
+    }
+
+    /* ================= DELETE ================= */
+
+    .delete-btn {
+        display: inline-block;
+        background: #dc3545;
+        color: white;
+        padding: 8px 13px;
+        border-radius: 7px;
+        text-decoration: none;
+        font-size: 12px;
+        font-weight: bold;
+        transition: 0.25s;
+        white-space: nowrap;
+    }
+
+    .delete-btn:hover {
+        background: #b02a37;
+        transform: translateY(-1px);
+    }
+
+    /* ================= NO DATA ================= */
+
+    .no-data {
+        text-align: center;
+        padding: 70px 20px;
+        color: #777;
+    }
+
+    .no-data-icon {
+        font-size: 45px;
+        margin-bottom: 15px;
+    }
+
+    .no-data h3 {
+        color: #555;
+        margin-bottom: 8px;
+        font-size: 20px;
+    }
+
+    .no-data p {
+        font-size: 14px;
+    }
+
+    /* ================= FOOTER ================= */
+
+    .footer {
+        text-align: center;
+        color: #888;
+        font-size: 13px;
+        padding: 20px;
+    }
+
+    /* ================= MOBILE ================= */
+
+    @media (max-width: 650px) {
+
+        .header {
+            padding: 15px 20px;
+        }
+
+        .logo {
+            font-size: 18px;
+        }
+
+        .logo-icon {
+            width: 38px;
+            height: 38px;
+            font-size: 20px;
+        }
+
+        .admin-badge {
+            display: none;
+        }
+
+        .logout {
+            padding: 9px 12px;
+            font-size: 13px;
+        }
+
+        .container {
+            width: 92%;
+            margin-top: 25px;
+        }
+
+        .title h2 {
+            font-size: 25px;
+        }
+
+    }
+
+</style>
+```
+
+</head>
+
+<body>
+
+```
+<!-- ================= HEADER ================= -->
+
+<header class="header">
+
+    <div class="logo-area">
+
+        <div class="logo-icon">
+            🏛️
+        </div>
+
+        <div class="logo">
+            Smart Panchayat
+        </div>
+
+    </div>
+
+
+    <div class="header-right">
+
+        <div class="admin-badge">
+            👑 Administrator
+        </div>
+
+        <a href="{{ url_for('logout') }}"
+           class="logout">
+
+            Logout
+
+        </a>
+
+    </div>
+
+</header>
+
+
+<!-- ================= MAIN ================= -->
+
+<main class="container">
+
+
+    <div class="top-area">
+
+
+        <!-- BACK -->
+
+        <a
+            href="{{ url_for('admin_dashboard') }}"
+            class="back-btn"
+        >
+            ← Back to Admin Dashboard
+        </a>
+
+
+        <!-- TITLE -->
+
+        <div class="title">
+
+            <h2>
+                👥 Manage Citizens
+            </h2>
+
+            <p>
+                View and manage registered citizens in the Smart Panchayat portal.
+            </p>
+
+            <div class="summary">
+
+                👤 Registered Citizens:
+
+                <strong>
+                    {{ citizens|length }}
+                </strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= CITIZEN TABLE ================= -->
+
+    <div class="table-container">
+
+
+        {% if citizens %}
+
+
+        <table>
+
+
+            <thead>
+
+                <tr>
+
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Village</th>
+                    <th>Role</th>
+                    <th>Action</th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody>
+
+
+                {% for citizen in citizens %}
+
+
+                <tr>
+
+
+                    <td>
+
+                        <span class="id">
+                            #{{ citizen.id }}
+                        </span>
+
+                    </td>
+
+
+                    <td>
+
+                        <span class="name">
+                            {{ citizen.name }}
+                        </span>
+
+                    </td>
+
+
+                    <td>
+
+                        <span class="email">
+                            {{ citizen.email }}
+                        </span>
+
+                    </td>
+
+
+                    <td>
+
+                        <span class="phone">
+                            {{ citizen.phone }}
+                        </span>
+
+                    </td>
+
+
+                    <td>
+
+                        <span class="village">
+                            {{ citizen.village }}
+                        </span>
+
+                    </td>
+
+
+                    <td>
+
+                        <span class="role">
+                            👤 Citizen
+                        </span>
+
+                    </td>
+
+
+                    <td>
+
+                        <a
+                            href="{{ url_for('delete_citizen', citizen_id=citizen.id) }}"
+                            class="delete-btn"
+                            onclick="return confirm('Are you sure you want to delete this citizen?');"
+                        >
+                            🗑️ Delete
+                        </a>
+
+                    </td>
+
+
+                </tr>
+
+
+                {% endfor %}
+
+
+            </tbody>
+
+
+        </table>
+
+
+        {% else %}
+
+
+        <div class="no-data">
+
+            <div class="no-data-icon">
+                👥
+            </div>
+
+            <h3>
+                No Citizens Found
+            </h3>
+
+            <p>
+                There are currently no registered citizens.
+            </p>
+
+        </div>
+
+
+        {% endif %}
+
+
+    </div>
+
+
+</main>
+
+
+<footer class="footer">
+
+    Smart Panchayat Portal © 2026
+
+</footer>
+```
+
+</body>
+
+</html>

@@ -1,0 +1,1229 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+```
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Update Complaint - Smart Panchayat</title>
+
+<style>
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+    }
+
+    body {
+        background: #f4f7fb;
+        color: #333;
+        min-height: 100vh;
+    }
+
+    /* ================= HEADER ================= */
+
+    .header {
+        background: linear-gradient(135deg, #1e3a5f, #28527a);
+        color: white;
+        padding: 18px 5%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 3px 12px rgba(0, 0, 0, 0.12);
+    }
+
+    .logo-area {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .logo-icon {
+        width: 44px;
+        height: 44px;
+        background: rgba(255, 255, 255, 0.15);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 23px;
+    }
+
+    .logo {
+        font-size: 22px;
+        font-weight: bold;
+    }
+
+    .header-right {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .officer-badge {
+        background: rgba(255, 255, 255, 0.15);
+        padding: 9px 14px;
+        border-radius: 20px;
+        font-size: 13px;
+    }
+
+    .logout {
+        background: #e74c3c;
+        color: white;
+        text-decoration: none;
+        padding: 10px 17px;
+        border-radius: 8px;
+        font-size: 14px;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    .logout:hover {
+        background: #c0392b;
+        transform: translateY(-2px);
+    }
+
+    /* ================= CONTAINER ================= */
+
+    .container {
+        width: 92%;
+        max-width: 1000px;
+        margin: 35px auto 60px;
+    }
+
+    /* ================= PAGE TITLE ================= */
+
+    .page-title {
+        margin-bottom: 25px;
+    }
+
+    .page-title h1 {
+        color: #1e3a5f;
+        font-size: 30px;
+        margin-bottom: 8px;
+    }
+
+    .page-title p {
+        color: #666;
+        font-size: 15px;
+    }
+
+    /* ================= MAIN CARD ================= */
+
+    .complaint-card {
+        background: white;
+        padding: 30px;
+        border-radius: 16px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
+    }
+
+    /* ================= SECTION ================= */
+
+    .section {
+        margin-bottom: 30px;
+    }
+
+    .section-title {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: #1e3a5f;
+        font-size: 19px;
+        font-weight: bold;
+        margin-bottom: 18px;
+        padding-bottom: 10px;
+        border-bottom: 2px solid #edf1f5;
+    }
+
+    /* ================= DETAILS GRID ================= */
+
+    .details-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+    }
+
+    .detail {
+        background: #f8fafc;
+        border: 1px solid #e7ebf0;
+        border-radius: 10px;
+        padding: 15px;
+    }
+
+    .detail.full {
+        grid-column: 1 / -1;
+    }
+
+    .detail strong {
+        display: block;
+        color: #667085;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.3px;
+        margin-bottom: 7px;
+    }
+
+    .detail span {
+        color: #222;
+        font-size: 15px;
+        line-height: 1.5;
+        word-break: break-word;
+    }
+
+    .complaint-id {
+        color: #1e3a5f !important;
+        font-weight: bold;
+        font-size: 17px !important;
+    }
+
+    /* ================= PRIORITY ================= */
+
+    .priority {
+        display: inline-block;
+        padding: 6px 12px;
+        border-radius: 20px;
+        font-size: 12px !important;
+        font-weight: bold;
+    }
+
+    .priority-high {
+        background: #f8d7da;
+        color: #842029 !important;
+    }
+
+    .priority-medium {
+        background: #fff3cd;
+        color: #856404 !important;
+    }
+
+    .priority-low {
+        background: #d1e7dd;
+        color: #0f5132 !important;
+    }
+
+    /* ================= STATUS ================= */
+
+    .current-status {
+        display: inline-block;
+        padding: 7px 13px;
+        border-radius: 20px;
+        font-size: 12px !important;
+        font-weight: bold;
+    }
+
+    .status-submitted {
+        background: #fff3cd;
+        color: #856404 !important;
+    }
+
+    .status-progress {
+        background: #cfe2ff;
+        color: #084298 !important;
+    }
+
+    .status-resolved {
+        background: #d1e7dd;
+        color: #0f5132 !important;
+    }
+
+    /* ================= UPDATE STATUS ================= */
+
+    .status-box {
+        background: #f8fafc;
+        border: 1px solid #dfe5eb;
+        border-radius: 12px;
+        padding: 22px;
+    }
+
+    .status-box label {
+        display: block;
+        color: #1e3a5f;
+        font-weight: bold;
+        margin-bottom: 9px;
+        font-size: 14px;
+    }
+
+    select {
+        width: 100%;
+        padding: 12px 13px;
+        border: 1px solid #ccd3dc;
+        border-radius: 8px;
+        font-size: 15px;
+        background: white;
+        color: #333;
+    }
+
+    select:focus {
+        outline: none;
+        border-color: #28527a;
+        box-shadow: 0 0 0 3px rgba(40, 82, 122, 0.10);
+    }
+
+    .update-btn {
+        width: 100%;
+        margin-top: 15px;
+        padding: 13px;
+        border: none;
+        border-radius: 8px;
+        background: #1e3a5f;
+        color: white;
+        font-size: 15px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .update-btn:hover {
+        background: #16304f;
+        transform: translateY(-1px);
+    }
+
+    /* ================= AI / ATTACHMENT CARDS ================= */
+
+    .info-card {
+        border: 1px solid #e0e5eb;
+        border-radius: 12px;
+        padding: 20px;
+        background: #fbfcfe;
+        margin-bottom: 18px;
+    }
+
+    .info-card:last-child {
+        margin-bottom: 0;
+    }
+
+    .info-card-title {
+        color: #1e3a5f;
+        font-weight: bold;
+        font-size: 16px;
+        margin-bottom: 7px;
+    }
+
+    .info-description {
+        color: #666;
+        font-size: 13px;
+        line-height: 1.6;
+        margin-bottom: 15px;
+    }
+
+    /* ================= IMAGES ================= */
+
+    .image-list {
+        list-style: none;
+    }
+
+    .image-item {
+        margin-bottom: 18px;
+        padding: 15px;
+        background: white;
+        border: 1px solid #e5e9ee;
+        border-radius: 10px;
+    }
+
+    .image-preview {
+        max-width: 260px;
+        max-height: 220px;
+        display: block;
+        object-fit: cover;
+        margin-bottom: 10px;
+        border-radius: 8px;
+        border: 1px solid #ddd;
+    }
+
+    .image-meta {
+        color: #555;
+        font-size: 13px;
+        line-height: 1.7;
+    }
+
+    .ai-label {
+        font-weight: bold;
+        color: #1e3a5f;
+    }
+
+    /* ================= AUDIO ================= */
+
+    .audio-list {
+        list-style: none;
+    }
+
+    .audio-item {
+        margin-bottom: 18px;
+        padding: 15px;
+        background: white;
+        border: 1px solid #e5e9ee;
+        border-radius: 10px;
+    }
+
+    audio {
+        width: 100%;
+        max-width: 420px;
+        margin-bottom: 10px;
+    }
+
+    .audio-meta {
+        color: #555;
+        font-size: 13px;
+        line-height: 1.7;
+    }
+
+    .transcript {
+        margin-top: 10px;
+        padding: 12px;
+        background: #f4f7fb;
+        border-radius: 8px;
+        color: #444;
+        line-height: 1.6;
+        font-size: 13px;
+    }
+
+    /* ================= AI RESOLUTION ================= */
+
+    .estimate-box {
+        background: #eef6ff;
+        border: 1px solid #cfe2ff;
+        border-radius: 10px;
+        padding: 16px;
+        color: #333;
+        line-height: 1.6;
+        font-size: 14px;
+    }
+
+    .estimate-number {
+        font-size: 22px;
+        font-weight: bold;
+        color: #1e3a5f;
+    }
+
+    /* ================= SIMILAR COMPLAINTS ================= */
+
+    .similar-list {
+        padding-left: 20px;
+    }
+
+    .similar-list li {
+        margin-bottom: 10px;
+        color: #555;
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    .similar-list a {
+        color: #1e3a5f;
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+    .similar-list a:hover {
+        text-decoration: underline;
+    }
+
+    /* ================= BACK ================= */
+
+    .back {
+        display: inline-block;
+        margin-top: 10px;
+        color: #1e3a5f;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 14px;
+    }
+
+    .back:hover {
+        text-decoration: underline;
+    }
+
+    /* ================= FOOTER ================= */
+
+    .footer {
+        text-align: center;
+        color: #888;
+        font-size: 13px;
+        padding: 20px;
+    }
+
+    /* ================= MOBILE ================= */
+
+    @media (max-width: 700px) {
+
+        .header {
+            padding: 15px 20px;
+        }
+
+        .logo {
+            font-size: 18px;
+        }
+
+        .logo-icon {
+            width: 38px;
+            height: 38px;
+            font-size: 20px;
+        }
+
+        .officer-badge {
+            display: none;
+        }
+
+        .logout {
+            padding: 9px 12px;
+            font-size: 13px;
+        }
+
+        .container {
+            width: 92%;
+            margin-top: 25px;
+        }
+
+        .page-title h1 {
+            font-size: 25px;
+        }
+
+        .complaint-card {
+            padding: 20px;
+        }
+
+        .details-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .detail.full {
+            grid-column: auto;
+        }
+
+        .image-preview {
+            max-width: 100%;
+        }
+
+    }
+
+</style>
+```
+
+</head>
+
+<body>
+
+```
+<!-- ================= HEADER ================= -->
+
+<header class="header">
+
+    <div class="logo-area">
+
+        <div class="logo-icon">
+            🏛️
+        </div>
+
+        <div class="logo">
+            Smart Panchayat
+        </div>
+
+    </div>
+
+
+    <div class="header-right">
+
+        <div class="officer-badge">
+            👨‍💼 Officer
+        </div>
+
+        <a href="{{ url_for('logout') }}"
+           class="logout">
+            Logout
+        </a>
+
+    </div>
+
+</header>
+
+
+<!-- ================= MAIN ================= -->
+
+<main class="container">
+
+
+    <div class="page-title">
+
+        <h1>
+            ✏️ Update Complaint
+        </h1>
+
+        <p>
+            Review complaint details and update its current status.
+        </p>
+
+    </div>
+
+
+    <div class="complaint-card">
+
+
+        <!-- ================= COMPLAINT DETAILS ================= -->
+
+        <section class="section">
+
+            <div class="section-title">
+                📋 Complaint Details
+            </div>
+
+
+            <div class="details-grid">
+
+
+                <div class="detail">
+
+                    <strong>
+                        Complaint ID
+                    </strong>
+
+                    <span class="complaint-id">
+                        #{{ complaint.id }}
+                    </span>
+
+                </div>
+
+
+                <div class="detail">
+
+                    <strong>
+                        Citizen Name
+                    </strong>
+
+                    <span>
+                        {{ complaint.name }}
+                    </span>
+
+                </div>
+
+
+                <div class="detail">
+
+                    <strong>
+                        Email
+                    </strong>
+
+                    <span>
+                        {{ complaint.email }}
+                    </span>
+
+                </div>
+
+
+                <div class="detail">
+
+                    <strong>
+                        Phone
+                    </strong>
+
+                    <span>
+                        {{ complaint.phone }}
+                    </span>
+
+                </div>
+
+
+                <div class="detail">
+
+                    <strong>
+                        Village
+                    </strong>
+
+                    <span>
+                        {{ complaint.village }}
+                    </span>
+
+                </div>
+
+
+                <div class="detail">
+
+                    <strong>
+                        Category
+                    </strong>
+
+                    <span>
+                        {{ complaint.category }}
+                    </span>
+
+                </div>
+
+
+                <div class="detail full">
+
+                    <strong>
+                        Complaint Title
+                    </strong>
+
+                    <span>
+                        {{ complaint.title }}
+                    </span>
+
+                </div>
+
+
+                <div class="detail full">
+
+                    <strong>
+                        Description
+                    </strong>
+
+                    <span>
+                        {{ complaint.description }}
+                    </span>
+
+                </div>
+
+
+                <div class="detail">
+
+                    <strong>
+                        Priority
+                    </strong>
+
+                    <span>
+
+                        {% if complaint.priority == "High" %}
+
+                            <span class="priority priority-high">
+                                🔴 High
+                            </span>
+
+                        {% elif complaint.priority == "Medium" %}
+
+                            <span class="priority priority-medium">
+                                🟡 Medium
+                            </span>
+
+                        {% else %}
+
+                            <span class="priority priority-low">
+                                🟢 Low
+                            </span>
+
+                        {% endif %}
+
+                    </span>
+
+                </div>
+
+
+                <div class="detail">
+
+                    <strong>
+                        Current Status
+                    </strong>
+
+                    <span>
+
+                        {% if complaint.status == "Submitted" %}
+
+                            <span class="current-status status-submitted">
+                                📥 Submitted
+                            </span>
+
+                        {% elif complaint.status == "In Progress" %}
+
+                            <span class="current-status status-progress">
+                                🔄 In Progress
+                            </span>
+
+                        {% elif complaint.status == "Resolved" %}
+
+                            <span class="current-status status-resolved">
+                                ✅ Resolved
+                            </span>
+
+                        {% else %}
+
+                            <span class="current-status">
+                                {{ complaint.status }}
+                            </span>
+
+                        {% endif %}
+
+                    </span>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= UPDATE STATUS ================= -->
+
+        <section class="section">
+
+            <div class="section-title">
+                🔄 Change Complaint Status
+            </div>
+
+
+            <form method="POST">
+
+                <input
+                    type="hidden"
+                    name="csrf_token"
+                    value="{{ csrf_token }}"
+                >
+
+
+                <div class="status-box">
+
+                    <label for="status">
+                        Select New Status
+                    </label>
+
+
+                    <select
+                        name="status"
+                        id="status"
+                        required
+                    >
+
+                        <option
+                            value="Submitted"
+                            {% if complaint.status == "Submitted" %}
+                                selected
+                            {% endif %}
+                        >
+                            📥 Submitted
+                        </option>
+
+
+                        <option
+                            value="In Progress"
+                            {% if complaint.status == "In Progress" %}
+                                selected
+                            {% endif %}
+                        >
+                            🔄 In Progress
+                        </option>
+
+
+                        <option
+                            value="Resolved"
+                            {% if complaint.status == "Resolved" %}
+                                selected
+                            {% endif %}
+                        >
+                            ✅ Resolved
+                        </option>
+
+                    </select>
+
+
+                    <button
+                        type="submit"
+                        class="update-btn"
+                    >
+                        ✓ Update Complaint Status
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+
+        <!-- ================= ATTACHED PHOTOS ================= -->
+
+        {% if complaint_images %}
+
+        <section class="section">
+
+            <div class="section-title">
+                📷 Attached Photos & AI Detection
+            </div>
+
+
+            <div class="info-card">
+
+                <div class="info-description">
+
+                    Image detection currently supports pothole photos only.
+                    Review the photo yourself before relying on the AI label —
+                    it is a suggestion, not a verified fact.
+
+                </div>
+
+
+                <ul class="image-list">
+
+
+                    {% for img in complaint_images %}
+
+                    <li class="image-item">
+
+
+                        <a
+                            href="{{ url_for('complaint_image', image_id=img.id) }}"
+                            target="_blank"
+                        >
+
+                            <img
+                                src="{{ url_for('complaint_image', image_id=img.id) }}"
+                                alt="Complaint photo"
+                                class="image-preview"
+                            >
+
+                        </a>
+
+
+                        <div class="image-meta">
+
+
+                            {% if img.detected_label %}
+
+                                <span class="ai-label">
+                                    AI detected:
+                                </span>
+
+                                <strong>
+                                    {{ img.detected_label }}
+                                </strong>
+
+                                <br>
+
+
+                                Confidence:
+                                {{ (img.confidence * 100) | round(1) }}%
+
+
+                                {% if img.is_low_confidence %}
+
+                                    <br>
+                                    ⚠️ Below confidence threshold —
+                                    treat as uncertain.
+
+                                {% endif %}
+
+
+                                {% if img.ai_suggested_category %}
+
+                                    <br>
+
+                                    Suggested category:
+                                    <strong>
+                                        {{ img.ai_suggested_category }}
+                                    </strong>
+
+
+                                    {% if img.ai_suggestion_confirmed %}
+
+                                        (Citizen used this suggestion.)
+
+                                    {% else %}
+
+                                        (Citizen chose a different/manual category.)
+
+                                    {% endif %}
+
+                                {% endif %}
+
+
+                            {% else %}
+
+                                AI detection was not available
+                                for this photo when it was uploaded.
+
+                            {% endif %}
+
+
+                        </div>
+
+                    </li>
+
+                    {% endfor %}
+
+
+                </ul>
+
+            </div>
+
+        </section>
+
+        {% endif %}
+
+
+        <!-- ================= VOICE RECORDINGS ================= -->
+
+        {% if complaint_audio_rows %}
+
+        <section class="section">
+
+            <div class="section-title">
+                🎤 Voice Recordings & Transcript
+            </div>
+
+
+            <div class="info-card">
+
+                <div class="info-description">
+
+                    The complaint text shown above is what the citizen
+                    confirmed after reviewing the transcript.
+                    Treat the raw engine output as a secondary reference only.
+
+                </div>
+
+
+                <ul class="audio-list">
+
+
+                    {% for rec in complaint_audio_rows %}
+
+                    <li class="audio-item">
+
+
+                        <audio
+                            controls
+                            src="{{ url_for('complaint_audio', audio_id=rec.id) }}"
+                        ></audio>
+
+
+                        <div class="audio-meta">
+
+                            Language selected:
+
+                            <strong>
+                                {{ 'Kannada' if rec.language_selected == 'kn' else 'English' }}
+                            </strong>
+
+
+                            <br>
+
+
+                            {% if rec.transcription_available %}
+
+
+                                Engine:
+
+                                <strong>
+                                    {{ rec.transcription_engine }}
+                                </strong>
+
+
+                                <br>
+
+
+                                Confidence:
+
+                                {{ (rec.asr_confidence * 100) | round(1) }}%
+
+
+                                {% if rec.is_low_confidence %}
+
+                                    <br>
+                                    ⚠️ Below threshold —
+                                    treat as uncertain.
+
+                                {% endif %}
+
+
+                                <div class="transcript">
+
+                                    <strong>
+                                        Raw transcript:
+                                    </strong>
+
+                                    <em>
+                                        "{{ rec.raw_transcript }}"
+                                    </em>
+
+                                </div>
+
+
+                                {% if rec.confirmed_transcript and rec.confirmed_transcript != rec.raw_transcript %}
+
+                                    <div class="transcript">
+
+                                        Citizen-confirmed text differed
+                                        from the raw transcript.
+                                        The confirmed complaint description
+                                        is shown above.
+
+                                    </div>
+
+
+                                {% elif rec.confirmed_transcript %}
+
+                                    <div class="transcript">
+
+                                        ✓ Citizen confirmed the transcript as-is.
+
+                                    </div>
+
+                                {% endif %}
+
+
+                            {% else %}
+
+                                No automatic transcript was available
+                                for this recording.
+                                The citizen typed the complaint description directly.
+
+                            {% endif %}
+
+                        </div>
+
+                    </li>
+
+                    {% endfor %}
+
+
+                </ul>
+
+            </div>
+
+        </section>
+
+        {% endif %}
+
+
+        <!-- ================= AI RESOLUTION ESTIMATE ================= -->
+
+        {% if resolution_estimate and resolution_estimate.available %}
+
+        <section class="section">
+
+            <div class="section-title">
+                🤖 AI Estimated Resolution Time
+            </div>
+
+
+            <div class="estimate-box">
+
+                Estimated resolution time:
+
+                <span class="estimate-number">
+                    ~{{ resolution_estimate.predicted_days }} days
+                </span>
+
+                ({{ resolution_estimate.predicted_hours }} hours)
+
+                <br>
+
+                Based on category, priority, and recent similar
+                complaints in this village.
+
+                <br>
+
+                <strong>
+                    This is an estimate, not a guaranteed deadline.
+                </strong>
+
+
+                {% if resolution_estimate.low_confidence %}
+
+                    <br><br>
+
+                    <em>
+                        ⚠️ Note: trained on synthetic bootstrap data
+                        because no real resolution history exists yet.
+                        Treat this as illustrative, not a firm figure.
+                    </em>
+
+                {% endif %}
+
+            </div>
+
+        </section>
+
+        {% endif %}
+
+
+        <!-- ================= SIMILAR COMPLAINTS ================= -->
+
+        {% if similar_complaints %}
+
+        <section class="section">
+
+            <div class="section-title">
+                🔎 Possibly Related Complaints
+            </div>
+
+
+            <div class="info-card">
+
+                <div class="info-description">
+
+                    These complaints were identified using AI text-similarity
+                    matching within the same category.
+
+                    Review them before assuming they are true duplicates.
+                    Nothing is merged or changed automatically.
+
+                </div>
+
+
+                <ul class="similar-list">
+
+
+                    {% for match in similar_complaints %}
+
+                    <li>
+
+                        <a
+                            href="{{ url_for('update_complaint', complaint_id=match.id) }}"
+                        >
+                            #{{ match.id }} — {{ match.title }}
+                        </a>
+
+                        — Status:
+                        <strong>
+                            {{ match.status }}
+                        </strong>
+
+                        — Similarity:
+                        <strong>
+                            {{ (match.similarity * 100) | round(1) }}%
+                        </strong>
+
+                    </li>
+
+                    {% endfor %}
+
+
+                </ul>
+
+            </div>
+
+        </section>
+
+        {% endif %}
+
+
+        <!-- ================= BACK ================= -->
+
+        <a
+            href="{{ url_for('all_complaints') }}"
+            class="back"
+        >
+            ← Back to All Complaints
+        </a>
+
+
+    </div>
+
+</main>
+
+
+<footer class="footer">
+
+    Smart Panchayat Portal © 2026
+
+</footer>
+```
+
+</body>
+
+</html>
