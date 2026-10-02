@@ -30,3 +30,6 @@ Smart-Panchayat-Portal-phase7.zip
 
 # Project flyers
 Project_Demo_Flyer*.png
+# Local database backup - never commit
+smart_panchayat_full_backup.sql
+complaint.sql.backup
